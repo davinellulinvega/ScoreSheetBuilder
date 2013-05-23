@@ -29,4 +29,4 @@ HEADERS  += mainwindow.h \
     student.h \
     parameters.h
 
-FORMS    += mainwindow.ui
+FORMS    +=

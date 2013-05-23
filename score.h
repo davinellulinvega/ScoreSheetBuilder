@@ -4,11 +4,20 @@
 class Score
 {
 public:
+    //Constructor
     Score();
 
+    //Getter & Setter
+    //Id
+    int getId();
+
+    //Mark
+    char getMark();
+    void setMark(mark);
+
 private:
-    int id;
-    char mark;
+    int m_id;
+    char m_mark;
 };
 
 #endif // SCORE_H
