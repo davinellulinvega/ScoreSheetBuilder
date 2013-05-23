@@ -19,7 +19,13 @@ SOURCES += main.cpp\
     score.cpp \
     lecture.cpp \
     student.cpp \
-    parameters.cpp
+    parameters.cpp \
+    classroomcontroller.cpp \
+    lecturecontroller.cpp \
+    parameterscontroller.cpp \
+    periodcontroller.cpp \
+    scorecontroller.cpp \
+    studentcontroller.cpp
 
 HEADERS  += mainwindow.h \
     classroom.h \
@@ -27,6 +33,12 @@ HEADERS  += mainwindow.h \
     score.h \
     lecture.h \
     student.h \
-    parameters.h
+    parameters.h \
+    classroomcontroller.h \
+    lecturecontroller.h \
+    parameterscontroller.h \
+    periodcontroller.h \
+    scorecontroller.h \
+    studentcontroller.h
 
 FORMS    +=
