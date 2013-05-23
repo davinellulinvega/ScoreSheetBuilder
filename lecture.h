@@ -10,11 +10,20 @@ using namespace std;
 class Lecture
 {
 public:
+    //Constructor
     Lecture();
 
+    //Getter & Setter
+    //Id
+    int getId();
+
+    //Title
+    string getTitle();
+    void setTitle(title);
+
 private:
-    int id;
-    string title;
+    int m_id;
+    string m_title;
 };
 
 #endif // LECTURE_H

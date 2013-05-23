@@ -4,9 +4,14 @@
 class Period
 {
 public:
+    //Constructor
     Period();
+
+    //Getter
+    int getId();
+
 private:
-    int id;
+    int m_id;
 };
 
 #endif // PERIOD_H

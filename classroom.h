@@ -11,12 +11,25 @@ using namespace std;
 class ClassRoom
 {
 public:
+    //Constructor
     ClassRoom();
 
+    //Getter & Setter
+    //Id
+    int getId();
+
+    //Title
+    string getTitle();
+    void setTitle(title);
+
+    //Students
+    vector<Student> getStudents();
+    void setStudents(vector<Student> students);
+
 private:
-    int id;
-    string title;
-    vector<Student> students;
+    int m_id;
+    string m_title;
+    vector<Student> m_students;
 
 signals:
 
