@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <QPair>
+#include <string>
 
 //Namespace
 using namespace std;
@@ -25,13 +26,11 @@ public:
 
     //Name
     string getName();
-    void setName(newName);
+    void setName(name);
 
     //Results
-    QPair<int,int> getResults();
-    int[] GetTabResults();
-    void setResults(QPair<int,int> newResults);
-    void setTabResults(tabResult);
+    *vector<QPair<int,int>> getResults();
+    void setResults(vector<QPair<int,int>> *newResults);
 
     //GlobalComment
     string getGlobalComment();
@@ -41,7 +40,7 @@ private:
     int m_id;
     string m_firstName;
     string m_name;
-    vector<QPair<int,int>> m_results;
+    vector<QPair<int,int>> *m_results;
     string m_globalComment;
 
 };
