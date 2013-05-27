@@ -24,12 +24,12 @@ public:
 
     //Students
     vector<Student> getStudents();
-    void setStudents(vector<Student> students);
+    void setStudents(vector<Student> *students);
 
 private:
     int m_id;
     string m_title;
-    vector<Student> m_students;
+    vector<Student> *m_students;
 
 signals:
 
