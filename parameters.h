@@ -1,6 +1,9 @@
 #ifndef PARAMETERS_H
 #define PARAMETERS_H
 
+//Packages
+#include <vector>
+
 class Parameters
 {
 public:
