@@ -29,7 +29,7 @@ public:
     void setName(name);
 
     //Results
-    *vector<QPair<int,int>> getResults();
+    vector<QPair<int,int>> *getResults();
     void setResults(vector<QPair<int,int>> *newResults);
 
     //GlobalComment
