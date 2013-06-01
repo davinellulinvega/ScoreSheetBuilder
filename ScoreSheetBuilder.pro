@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,7 +26,8 @@ SOURCES += main.cpp\
     parameterscontroller.cpp \
     periodcontroller.cpp \
     scorecontroller.cpp \
-    studentcontroller.cpp
+    studentcontroller.cpp \
+    xmlcontroller.cpp
 
 HEADERS  += mainwindow.h \
     classroom.h \
@@ -39,6 +41,7 @@ HEADERS  += mainwindow.h \
     parameterscontroller.h \
     periodcontroller.h \
     scorecontroller.h \
-    studentcontroller.h
+    studentcontroller.h \
+    xmlcontroller.h
 
 FORMS    +=
