@@ -1,5 +1,5 @@
 #include "classroomcontroller.h"
 
-ClassRoomController::ClassRoomController()
+ClassRoomController::ClassRoomController(QDomNodeList classrooms)
 {
 }

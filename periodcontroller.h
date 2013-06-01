@@ -1,6 +1,7 @@
 #ifndef PERIODCONTROLLER_H
 #define PERIODCONTROLLER_H
 
+#include <QtXml>
 #include "period.h"
 #include <vector>
 
@@ -8,7 +9,7 @@ class PeriodController
 {
 public:
     //Constructor
-    PeriodController();
+    PeriodController(QDomNodeList periods);
 
     //Methods
     bool add(Period period);
@@ -18,6 +19,9 @@ public:
     vector<Period> queryAll();
 
     //Static methods
+
+private:
+    QDomNodeList periods;
 };
 
 #endif // PERIODCONTROLLER_H

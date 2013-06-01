@@ -1,5 +1,5 @@
 #include "studentcontroller.h"
 
-StudentController::StudentController()
+StudentController::StudentController(QDomNodeList students)
 {
 }

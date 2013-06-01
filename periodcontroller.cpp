@@ -1,5 +1,5 @@
 #include "periodcontroller.h"
 
-PeriodController::PeriodController()
+PeriodController::PeriodController(QDomNodeList periods)
 {
 }

@@ -1,5 +1,5 @@
 #include "scorecontroller.h"
 
-ScoreController::ScoreController()
+ScoreController::ScoreController(QDomNodeList scores)
 {
 }

@@ -1,6 +1,7 @@
 #ifndef STUDENTCONTROLLER_H
 #define STUDENTCONTROLLER_H
 
+#include <QtXml>
 #include "student.h"
 #include <vector>
 
@@ -8,7 +9,7 @@ class StudentController
 {
 public:
     //Constructor
-    StudentController();
+    StudentController(QDomNodeList students);
 
     //Methods
     bool add(Student student);
@@ -19,6 +20,9 @@ public:
 
     //Static Methods
     static bool isValidId(id);
+
+private:
+    QDomNodeList students;
 };
 
 #endif // STUDENTCONTROLLER_H

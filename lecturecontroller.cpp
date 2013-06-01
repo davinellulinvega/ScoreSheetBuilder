@@ -1,5 +1,5 @@
 #include "lecturecontroller.h"
 
-LectureController::LectureController()
+LectureController::LectureController(QDomNodeList lectures)
 {
 }
