@@ -11,6 +11,10 @@ public:
     //Constructor
     StudentController(QDomNodeList &students, QDomNode &studentsNode);
 
+    //Getters
+    QDomNodeList getStudents();
+    QDomNode getStudentsNode();
+
     //Methods
     bool add(Student student);
     bool update(Student student);

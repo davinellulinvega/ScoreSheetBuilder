@@ -2,8 +2,8 @@
 <classes>
 	<class id="0">
 		<students>
-			<student id="0" fName="fName1" name="name1" />
-			<student id="1" fName="fName2" name="name2" />
+			<student id="0" fName="fName1" name="name1" globalComment="com1" />
+			<student id="1" fName="fName2" name="name2" globalComment="com2" />
 		</students>
 		<periods>
 			<period id="0">
