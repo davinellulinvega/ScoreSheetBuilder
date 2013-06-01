@@ -9,7 +9,7 @@ class StudentController
 {
 public:
     //Constructor
-    StudentController(QDomNodeList students);
+    StudentController(QDomNodeList &students, QDomNode &studentsNode);
 
     //Methods
     bool add(Student student);
@@ -22,7 +22,8 @@ public:
     static bool isValidId(id);
 
 private:
-    QDomNodeList students;
+    QDomNodeList m_students;
+    QDomNode m_studentsNode;
 };
 
 #endif // STUDENTCONTROLLER_H

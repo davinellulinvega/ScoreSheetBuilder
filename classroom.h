@@ -4,6 +4,7 @@
 //Packages
 #include <iostream>
 #include <vector>
+#include "student.h"
 
 //Namespace
 using namespace std;
@@ -20,7 +21,7 @@ public:
 
     //Title
     string getTitle();
-    void setTitle(title);
+    void setTitle(string title);
 
     //Students
     vector<Student> getStudents();
@@ -30,10 +31,6 @@ private:
     int m_id;
     string m_title;
     vector<Student> *m_students;
-
-signals:
-
-slots:
 };
 
 #endif // CLASSROOM_H

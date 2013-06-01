@@ -19,7 +19,7 @@ public:
 
     //Title
     string getTitle();
-    void setTitle(title);
+    void setTitle(string title);
 
 private:
     int m_id;

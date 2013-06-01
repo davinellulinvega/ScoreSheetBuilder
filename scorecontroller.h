@@ -9,7 +9,7 @@ class ScoreController
 {
 public:
     //Constructor
-    ScoreController(QDomNodeList scores);
+    ScoreController(QDomNodeList &scores, QDomNode &scoresNode);
 
     //Methods
     bool add(Score score);
@@ -21,7 +21,8 @@ public:
     //Static methods
 
 private:
-    QDomNodeList scores;
+    QDomNodeList m_scores;
+    QDomNode m_scoresNode;
 };
 
 #endif // SCORECONTROLLER_H

@@ -9,20 +9,21 @@ class ClassRoomController
 {
 public:
     //Constructor
-    ClassRoomController(QDomNodeList classrooms);
+    ClassRoomController(QDomNodeList &classrooms, QDomNode &classroomsNode);
 
     //Methods
     bool add(ClassRoom classRoom);
     bool update(ClassRoom classRoom);
-    bool remove(id);
-    ClassRoom query(id);
+    bool remove(int id);
+    ClassRoom query(int id);
     vector<ClassRoom> queryAll();
 
     //Static Methods
-    static bool isValidId(id);
+    static bool isValidId(int id);
 
 private:
-    QDomNodeList classroomes;
+    QDomNodeList m_classrooms;
+    QDomNode m_classroomsNode;
 };
 
 #endif // CLASSROOMCONTROLLER_H

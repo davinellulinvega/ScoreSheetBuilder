@@ -18,7 +18,7 @@ char Score::getMark() {
     return this->m_mark;
 }
 
-void Score::setMark(mark) {
+void Score::setMark(char mark) {
     //Set the mark
     this->m_mark=mark;
 }

@@ -14,7 +14,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     classroom.cpp \
     period.cpp \
     score.cpp \
@@ -29,7 +28,7 @@ SOURCES += main.cpp\
     studentcontroller.cpp \
     xmlcontroller.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     classroom.h \
     period.h \
     score.h \

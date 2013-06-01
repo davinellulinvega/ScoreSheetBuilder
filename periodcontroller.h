@@ -1,27 +1,28 @@
 #ifndef PERIODCONTROLLER_H
 #define PERIODCONTROLLER_H
 
+#include <vector>
 #include <QtXml>
 #include "period.h"
-#include <vector>
 
 class PeriodController
 {
 public:
     //Constructor
-    PeriodController(QDomNodeList periods);
+    PeriodController(QDomNodeList &periods, QDomNode &periodsNode);
 
     //Methods
     bool add(Period period);
     bool update(Period period);
-    bool remove(id);
-    Period query(id);
+    bool remove(int id);
+    Period query(int id);
     vector<Period> queryAll();
 
     //Static methods
-
+    static bool isValidId(int id);
 private:
-    QDomNodeList periods;
+    QDomNodeList m_periods;
+    QDomNode m_periodsNode;
 };
 
 #endif // PERIODCONTROLLER_H

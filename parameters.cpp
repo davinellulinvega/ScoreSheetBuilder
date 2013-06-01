@@ -14,7 +14,7 @@ bool Parameters::isModified() {
     return this->m_modifs;
 }
 
-void Parameters::setModifs(state) {
+void Parameters::setModifs(bool state) {
     //Set the new state
     this->m_modifs=state;
 }
@@ -25,7 +25,7 @@ int Parameters::getClassroom() {
     return this->m_classRoom;
 }
 
-void Parameters::setClassroom(id) {
+void Parameters::setClassroom(int id) {
     //If the id is part of the available ids
     if(ClassRoomController::isValidId(id)) {
         this->m_classRoom=id;
@@ -38,7 +38,7 @@ int Parameters::getPeriod() {
     return this->m_period;
 }
 
-void Parameters::setPeriod(id) {
+void Parameters::setPeriod(int id) {
     //If the period id is valid
     if(PeriodController::isValidId(id)) {
         this->m_period=id;

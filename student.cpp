@@ -18,7 +18,7 @@ string Student::getFirstName() {
     return this->m_firstName;
 }
 
-void Student::setFirstName(firstName) {
+void Student::setFirstName(string firstName) {
     //If firstName is not empty
     if(!firstName.empty()) {
         this->m_firstName=firstName;
@@ -31,7 +31,7 @@ string Student::getName() {
     return this->m_name;
 }
 
-void Student::setName(name) {
+void Student::setName(string name) {
     //If the name is not empty
     if(!name.empty()) {
         this->m_name=name;
@@ -44,7 +44,7 @@ vector<QPair<int, int> > *Student::getResults() {
                        return this->m_results;
 }
 
-void Student::setResults(vector<QPair<int,int>> *newResults) {
+void Student::setResults(vector<QPair<int,int> > *newResults) {
     //Set the results
     this->m_results=newResults;
 }
@@ -55,7 +55,7 @@ string Student::getGlobalComment() {
     return this->m_globalComment;
 }
 
-void Student::setGlobalComment(str) {
+void Student::setGlobalComment(string str) {
     //If the comment is not empty
     if(!str.empty()) {
         //Set the global comment

@@ -22,25 +22,25 @@ public:
 
     //First Name
     string getFirstName();
-    void setFirstName(firstName);
+    void setFirstName(string firstName);
 
     //Name
     string getName();
-    void setName(name);
+    void setName(string name);
 
     //Results
-    vector<QPair<int,int>> *getResults();
-    void setResults(vector<QPair<int,int>> *newResults);
+    vector<QPair<int,int> > *getResults();
+    void setResults(vector<QPair<int,int> > *newResults);
 
     //GlobalComment
     string getGlobalComment();
-    void setGlobalComment(str);
+    void setGlobalComment(string str);
 
 private:
     int m_id;
     string m_firstName;
     string m_name;
-    vector<QPair<int,int>> *m_results;
+    vector<QPair<int,int> > *m_results;
     string m_globalComment;
 
 };

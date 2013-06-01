@@ -1,6 +1,10 @@
 #ifndef SCORE_H
 #define SCORE_H
 
+#include <iostream>
+
+using namespace std;
+
 class Score
 {
 public:
@@ -13,7 +17,7 @@ public:
 
     //Mark
     char getMark();
-    void setMark(mark);
+    void setMark(char mark);
 
 private:
     int m_id;

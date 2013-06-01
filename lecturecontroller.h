@@ -9,19 +9,20 @@ class LectureController
 {
 public:
     //Constructor
-    LectureController(QDomNodeList &lectures);
+    LectureController(QDomNodeList &lectures, QDomNode &lecturesNode);
 
     //Methods
     bool add(Lecture lecture);
     bool update(Lecture lecture);
-    bool remove(id);
-    Lecture query(id);
+    bool remove(int id);
+    Lecture query(int id);
     vector<Lecture> queryAll();
 
     //Static methods
 
 private:
-    QDomNodeList lectures;
+    QDomNodeList m_lectures;
+    QDomNode m_lecturesNode;
 };
 
 #endif // LECTURECONTROLLER_H

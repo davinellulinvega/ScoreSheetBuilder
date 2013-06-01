@@ -4,6 +4,7 @@
 //Packages
 #include <vector>
 
+
 class Parameters
 {
 public:
@@ -13,15 +14,15 @@ public:
     //Getter & Setter
     //Modifs
     bool isModified();
-    void setModifs(state);
+    void setModifs(bool state);
 
     //Classroom
     int getClassroom();
-    void setClassroom(id);
+    void setClassroom(int id);
 
     //Period
     int getPeriod();
-    void setPeriod(id);
+    void setPeriod(int id);
 
 private:
     bool m_modifs;

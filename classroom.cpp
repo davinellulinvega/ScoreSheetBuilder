@@ -18,9 +18,9 @@ string ClassRoom::getTitle() {
     return this->m_title;
 }
 
-void ClassRoom::setTitle (title) {
+void ClassRoom::setTitle (string title) {
     //Check if the title is valid
-    if(title!="" && title!=null) {
+    if(!title.empty ()) {
         //Set the title
         this->m_title=title;
     }
@@ -29,7 +29,7 @@ void ClassRoom::setTitle (title) {
 //Students
 vector<Student> ClassRoom::getStudents() {
     //Retrun the vector containing the Students
-    return this->m_students;
+    return *m_students;
 }
 
 void ClassRoom::setStudents(vector<Student> *students) {

@@ -18,7 +18,7 @@ string Lecture::getTitle() {
     return this->m_title;
 }
 
-void Lecture::setTitle(title) {
+void Lecture::setTitle(string title) {
     //Check if the new title is valid
     if(!title.empty()) {
         this->m_title=title;
