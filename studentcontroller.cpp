@@ -34,14 +34,35 @@ bool StudentController::update(Student student) {
             tmpElem.setAttribute ("fName",student.getFirstName ());
             tmpElem.setAttribute ("name",student.getName ());
             tmpElem.setAttribute ("globalComment",student.getGlobalComment ());
+            return true;
+        }
+    }
+    return false;
+}
 
+bool StudentController::remove(int id) {
+    //Parameters
+    QDomNode rmNode;
+
+    //Get the node to be removed
+    for(int i=0; i<this->m_students.length (); i++) {
+        QDomElement tmpElem(this->m_students.item (i).toElement ());
+        if(tmpElem.attributeNode ("id")==id) {
+            rmNode=this->m_students.item (i);
             break;
         }
     }
+
+    //Remove the node from the tree
+    if(this->m_studentsNode.removeChild (rmNode)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
-bool StudentController::remove(id);
-Student StudentController::query(id);
+Student StudentController::query(int id);
 vector<Student> StudentController::queryAll();
 
 //Static Methods
