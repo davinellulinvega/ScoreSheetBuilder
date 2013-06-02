@@ -9,7 +9,7 @@ class StudentController
 {
 public:
     //Constructor
-    StudentController(QDomNodeList &students, QDomNode &studentsNode);
+    StudentController(QDomNode &studentsNode);
 
     //Getters
     QDomNodeList getStudents();

@@ -1,6 +1,6 @@
 #include "classroomcontroller.h"
 
-ClassRoomController::ClassRoomController(QDomNodeList &classrooms, QDomNode &classroomsNode)
+ClassRoomController::ClassRoomController(QDomNode &classroomsNode)
 {
     //Simply assign the parameters to the attributs
     this->m_classroomsNode=classroomsNode;

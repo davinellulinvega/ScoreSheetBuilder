@@ -1,5 +1,6 @@
 #include "xmlcontroller.h"
 
+//Constructor
 Xmlcontroller::Xmlcontroller(QWidget *parent) :
     QWidget(parent)
 {
@@ -28,3 +29,32 @@ Xmlcontroller::Xmlcontroller(QWidget *parent) :
     this->domElement=this->document->documentElement ();
     this->root=this->domElement.firstChild ();
 }
+
+//Getter
+//Classroom
+QDomNode Xmlcontroller::getClassroomsNode () {
+    //Get the child nodes
+    QDomNodeList childNodes(this->root.childNodes ());
+
+    //Find the node with the right tag name
+    for(int i=0; i<childNodes.length (); i++){
+        QDomNode tmpNode(childNodes.item (i));
+        if(tmpNode.nodeName ()=="classes") {
+            return tmpNode;
+        }
+    }
+}
+
+//Lecture
+QDomNode getLecturesNode (int classId, int periodId) {
+
+}
+
+//Period
+QDomNode getPeriodsNode (int classId);
+
+//Score
+QDomNode getScoresNode ();
+
+//Student
+QDomNode getStudentsNode (int classId);

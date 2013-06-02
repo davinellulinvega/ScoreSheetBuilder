@@ -1,7 +1,7 @@
 #include "studentcontroller.h"
 
 //Constructor
-StudentController::StudentController(QDomNodeList &students, QDomNode &studentsNode):m_students(students),m_studentsNode(studentsNode)
+StudentController::StudentController(QDomNode &studentsNode):m_students(students),m_studentsNode(studentsNode)
 {
 }
 

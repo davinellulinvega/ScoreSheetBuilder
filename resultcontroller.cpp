@@ -1,5 +1,5 @@
 #include "resultcontroller.h"
 
-ResultController::ResultController(QDomNodeList &results, QDomNode &reslutsNode)
+ResultController::ResultController(QDomNode &reslutsNode)
 {
 }

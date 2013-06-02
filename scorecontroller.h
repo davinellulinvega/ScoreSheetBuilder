@@ -9,7 +9,7 @@ class ScoreController
 {
 public:
     //Constructor
-    ScoreController(QDomNodeList &scores, QDomNode &scoresNode);
+    ScoreController(QDomNode &scoresNode);
 
     //Methods
     bool add(Score score);

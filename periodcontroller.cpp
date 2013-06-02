@@ -1,6 +1,6 @@
 #include "periodcontroller.h"
 
-PeriodController::PeriodController(QDomNodeList &periods, QDomNode &periodsNode)
+PeriodController::PeriodController(QDomNode &periodsNode)
 {
     //Simply assign the parameters to the attributs
     this->m_periodsNode=periodsNode;

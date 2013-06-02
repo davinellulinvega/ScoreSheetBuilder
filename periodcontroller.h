@@ -9,7 +9,7 @@ class PeriodController
 {
 public:
     //Constructor
-    PeriodController(QDomNodeList &periods, QDomNode &periodsNode);
+    PeriodController(QDomNode &periodsNode);
 
     //Methods
     bool add(Period period);

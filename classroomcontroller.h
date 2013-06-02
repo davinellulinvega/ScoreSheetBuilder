@@ -9,7 +9,7 @@ class ClassRoomController
 {
 public:
     //Constructor
-    ClassRoomController(QDomNodeList &classrooms, QDomNode &classroomsNode);
+    ClassRoomController(QDomNode &classroomsNode);
 
     //Methods
     bool add(ClassRoom classRoom);

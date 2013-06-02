@@ -9,7 +9,7 @@ class LectureController
 {
 public:
     //Constructor
-    LectureController(QDomNodeList &lectures, QDomNode &lecturesNode);
+    LectureController(QDomNode &lecturesNode);
 
     //Methods
     bool add(Lecture lecture);
