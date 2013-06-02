@@ -54,7 +54,18 @@ QDomNode getLecturesNode (int classId, int periodId) {
 QDomNode getPeriodsNode (int classId);
 
 //Score
-QDomNode getScoresNode ();
+QDomNode Xmlcontroller::getScoresNode () {
+    //Get the child nodes
+    QDomNodeList childNodes(this->root.childNodes ());
+
+    //Find the node with the right tag name
+    for(int i=0; i<childNodes.length (); i++){
+        QDomNode tmpNode(childNodes.item (i));
+        if(tmpNode.nodeName ()=="scores") {
+            return tmpNode;
+        }
+    }
+}
 
 //Student
 QDomNode getStudentsNode (int classId);
@@ -63,4 +74,15 @@ QDomNode getStudentsNode (int classId);
 QDomNode getResultsNode (int classId, int periodId);
 
 //Parameters
-QDomNode getParametersNode();
+QDomNode Xmlcontroller::getParametersNode() {
+    //Get the child nodes
+    QDomNodeList childNodes(this->root.childNodes ());
+
+    //Find the node with the right tag name
+    for(int i=0; i<childNodes.length (); i++){
+        QDomNode tmpNode(childNodes.item (i));
+        if(tmpNode.nodeName ()=="parameters") {
+            return tmpNode;
+        }
+    }
+}
