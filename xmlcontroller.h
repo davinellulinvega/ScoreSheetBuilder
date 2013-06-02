@@ -17,24 +17,22 @@ public:
 
     //Getter
     //Classroom
-    QDomNodeList getClassrooms();
     QDomNode getClassroomsNode ();
 
     //Lecture
-    QDomNodeList getLectures();
     QDomNode getLecturesNode ();
 
     //Period
-    QDomNodeList getPeriods();
     QDomNode getPeriodsNode ();
 
     //Score
-    QDomNodeList getScores();
     QDomNode getScoresNode ();
 
     //Student
-    QDomNodeList getStudents();
     QDomNode getStudentsNode ();
+
+    //Methods
+    bool save();
 protected:
     QDomDocument *document;
     QDomElement domElement;
