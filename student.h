@@ -12,11 +12,12 @@ class Student
 {
 public:
     //Constructor
-    Student();
+    Student(int id, string fName, string name, string globalCom);
 
     //Getter & Setter
     //Id
     int getId();
+    void setId(int id);
 
     //First Name
     string getFirstName();

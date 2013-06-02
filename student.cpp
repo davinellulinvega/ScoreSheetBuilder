@@ -1,7 +1,7 @@
 #include "student.h"
 
 //Constructor
-Student::Student()
+Student::Student(int id, string fName, string name, string globalCom):m_id(id),m_firstName(fName),m_name(name),m_globalComment(globalCom)
 {
 }
 
@@ -10,6 +10,10 @@ Student::Student()
 int Student::getId() {
     //Return the id
     return this->m_id;
+}
+
+void Student::setId (int id) {
+    this->m_id=id;
 }
 
 //First Name

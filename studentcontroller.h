@@ -16,7 +16,7 @@ public:
     QDomNode getStudentsNode();
 
     //Methods
-    bool add(Student student);
+    bool add(Student student, QDomElement studentElem);
     bool update(Student student);
     bool remove(id);
     Student query(id);

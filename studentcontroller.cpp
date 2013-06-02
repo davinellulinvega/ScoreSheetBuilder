@@ -15,9 +15,18 @@ QDomNode StudentController::getStudentsNode () {
 }
 
 //Methods
-bool StudentController::add(Student student) {
-    //Create a new element
-    QDomElement student();
+bool StudentController::add(Student student, QDomElement studentElem) {
+    //Set the attributes
+    studentElem.setAttribute ("id",student.getId ());
+    studentElem.setAttribute ("fName",student.getFirstName ());
+    studentElem.setAttribute ("name",student.getName ());
+    studentElem.setAttribute ("globalComment",student.getGlobalComment ());
+
+    //Append the child to the node
+    this->m_studentsNode.appendChild (studentElem);
+
+    //Update the node liste
+    this->m_students=this->m_studentsNode.childNodes ();
 }
 
 bool StudentController::update(Student student) {
@@ -63,8 +72,35 @@ bool StudentController::remove(int id) {
     }
 }
 
-Student StudentController::query(int id);
-vector<Student> StudentController::queryAll();
+Student StudentController::query(int id) {
+    //Parameters
+    QDomElement studentXml;
+
+    //Get the studentXml corresponding to id
+    for(int i=0; i<this->m_students.length (); i++) {
+        if(this->m_students.item (i).toElement ().attributeNode ("id")==id) {
+            studentXml=this->m_students.item (i).toElement ();
+            break;
+        }
+    }
+
+    //Return the student
+    return new Student(studentXml.attributeNode ("id"),studentXml.attributeNode ("fName"),studentXml.attributeNode ("name"),studentXml.attributeNode ("globalComment"))
+}
+
+vector<Student> StudentController::queryAll() {
+    //Create a new vector
+    vector<Student> students;
+
+    //For each student
+    for(int i=0; i<this->m_students.length (); i++) {
+        //Get the studentXml
+        QDomElement tmpStudentXml(this->m_students.item (i).toElement ());
+
+        //Append at the end of the vector
+        students.push_back (new Student(tmpStudentXml.attributeNode ("id"),tmpStudentXml.attributeNode ("fName"),tmpStudentXml.attributeNode ("name"),tmpStudentXml.attributeNode ("globalComment")));
+    }
+}
 
 //Static Methods
 static bool StudentController::isValidId(int id);
