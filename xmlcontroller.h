@@ -20,16 +20,19 @@ public:
     QDomNode getClassroomsNode ();
 
     //Lecture
-    QDomNode getLecturesNode ();
+    QDomNode getLecturesNode (int classId, int periodId);
 
     //Period
-    QDomNode getPeriodsNode ();
+    QDomNode getPeriodsNode (int classId);
 
     //Score
     QDomNode getScoresNode ();
 
     //Student
-    QDomNode getStudentsNode ();
+    QDomNode getStudentsNode (int classId);
+
+    //Result
+    QDomNode getResultsNode (int classId, int periodId);
 
     //Methods
     bool save();
