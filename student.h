@@ -3,8 +3,6 @@
 
 //Packages
 #include <iostream>
-#include <vector>
-#include <QPair>
 #include <string>
 
 //Namespace
@@ -28,10 +26,6 @@ public:
     string getName();
     void setName(string name);
 
-    //Results
-    vector<QPair<int,int> > *getResults();
-    void setResults(vector<QPair<int,int> > *newResults);
-
     //GlobalComment
     string getGlobalComment();
     void setGlobalComment(string str);
@@ -40,7 +34,6 @@ private:
     int m_id;
     string m_firstName;
     string m_name;
-    vector<QPair<int,int> > *m_results;
     string m_globalComment;
 
 };

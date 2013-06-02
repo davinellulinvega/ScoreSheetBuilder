@@ -38,17 +38,6 @@ void Student::setName(string name) {
     }
 }
 
-//Results
-vector<QPair<int, int> > *Student::getResults() {
-                       //Return the results
-                       return this->m_results;
-}
-
-void Student::setResults(vector<QPair<int,int> > *newResults) {
-    //Set the results
-    this->m_results=newResults;
-}
-
 //GlobalComment
 string Student::getGlobalComment() {
     //Return global comment
