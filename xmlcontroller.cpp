@@ -170,3 +170,18 @@ QDomNode Xmlcontroller::getParametersNode() {
     }
     return NULL;
 }
+
+bool Xmlcontroller::save () {
+    //Open the file
+    QFile database("database.xml");
+    if(!database.open (QIODevice::WriteOnly)){
+        QMessageBox::warning (this,"Error opening database", "Cannot open the database. Does the file exist?");
+        return false;
+    }
+
+    //Open the text stream
+    QTextStream textStream(&database);
+    textStream << this->document->toString ();
+
+    return true;
+}
