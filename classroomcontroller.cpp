@@ -4,5 +4,5 @@ ClassRoomController::ClassRoomController(QDomNode &classroomsNode)
 {
     //Simply assign the parameters to the attributs
     this->m_classroomsNode=classroomsNode;
-    this->m_classrooms=classrooms;
+    this->m_classrooms=this->m_classroomsNode.childNodes ();
 }

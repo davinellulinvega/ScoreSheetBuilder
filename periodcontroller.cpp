@@ -4,5 +4,5 @@ PeriodController::PeriodController(QDomNode &periodsNode)
 {
     //Simply assign the parameters to the attributs
     this->m_periodsNode=periodsNode;
-    this->m_periods=periods;
+    this->m_periods=this->m_periodsNode.childNodes ();
 }

@@ -38,20 +38,61 @@ QDomNode Xmlcontroller::getClassroomsNode () {
 
     //Find the node with the right tag name
     for(int i=0; i<childNodes.length (); i++){
-        QDomNode tmpNode(childNodes.item (i));
-        if(tmpNode.nodeName ()=="classes") {
-            return tmpNode;
+        if(childNodes.item (i).nodeName ()=="classes") {
+            return childNodes.item (i);
         }
     }
+    return NULL;
 }
 
 //Lecture
-QDomNode getLecturesNode (int classId, int periodId) {
+QDomNode Xmlcontroller::getLecturesNode (int classId, int periodId) {
+    //Get the periods
+    QDomNode periodsNode(this->getPeriodsNode (classId));
+    QDomNodeList periods(periodsNode.childNodes ());
+    QDomNodeList childNodes;
 
+    //Get the childNodes of the period corresponding to periodId
+    for(int i=0; i<periods.length (); i++) {
+        if(periods.item (i).toElement ().attributeNode ("id")==periodId) {
+            childNodes=periods.item (i).childNodes ();
+            break;
+        }
+    }
+
+    //Get the lectures node
+    for(int i=0; i<childNodes.length (); i++) {
+        if(childNodes.item (i).nodeName ()=="lectures") {
+            return childNodes.item (i);
+        }
+    }
+    return NULL;
 }
 
 //Period
-QDomNode getPeriodsNode (int classId);
+QDomNode Xmlcontroller::getPeriodsNode (int classId) {
+    //Get the classrooms
+    QDomNode classroomsNode(this->getClassroomsNode ());
+    QDomNodeList classrooms(classroomsNode.childNodes ());
+    QDomNodeList childNodes;
+
+    //Get the childNodes of the classroom corresponding to id
+    for(int i=0; i<classrooms.length (); i++){
+        //If the ids are equals
+        if(classrooms.item (i).toElement ().attributeNode ("id")==classId) {
+            childNodes=classrooms.item (i).childNodes ();
+            break;
+        }
+    }
+
+    //Get the childNode periods
+    for(int i=0; i<childNodes.length (); i++) {
+        if(childNodes.item (i).nodeName ()=="periods") {
+            return childNodes.item (i);
+        }
+    }
+    return NULL;
+}
 
 //Score
 QDomNode Xmlcontroller::getScoresNode () {
@@ -60,18 +101,61 @@ QDomNode Xmlcontroller::getScoresNode () {
 
     //Find the node with the right tag name
     for(int i=0; i<childNodes.length (); i++){
-        QDomNode tmpNode(childNodes.item (i));
-        if(tmpNode.nodeName ()=="scores") {
-            return tmpNode;
+        if(childNodes.item (i).nodeName ()=="scores") {
+            return childNodes.item (i);
         }
     }
+    return NULL;
 }
 
 //Student
-QDomNode getStudentsNode (int classId);
+QDomNode Xmlcontroller::getStudentsNode (int classId) {
+    //Get the classrooms
+    QDomNode classroomsNode(this->getClassroomsNode ());
+    QDomNodeList classrooms(classroomsNode.childNodes ());
+    QDomNodeList childNodes;
+
+    //Get the childNodes of the classroom corresponding to id
+    for(int i=0; i<classrooms.length (); i++){
+        //If the ids are equals
+        if(classrooms.item (i).toElement ().attributeNode ("id")==classId) {
+            childNodes=classrooms.item (i).childNodes ();
+            break;
+        }
+    }
+
+    //Get the childNode students
+    for(int i=0; i<childNodes.length (); i++) {
+        if(childNodes.item (i).nodeName ()=="students") {
+            return childNodes.item (i);
+        }
+    }
+    return NULL;
+}
 
 //Result
-QDomNode getResultsNode (int classId, int periodId);
+QDomNode Xmlcontroller::getResultsNode (int classId, int periodId) {
+    //Get the periodsNode
+    QDomNode periodsNode(this->getPeriodsNode (classId));
+    QDomNodeList periods(periodsNode.childNodes ());
+    QDomNodeList childNodes;
+
+    //Get the child nodes of the period corresponding to periodId
+    for(int i=0; i<periods.length (); i++) {
+        if(periods.item (i).toElement ().attributeNode ("id")==periodId) {
+            childNodes=periods.item (i).childNodes ();
+            break;
+        }
+    }
+
+    //Get the results node
+    for(int i=0; i<childNodes.length (); i++) {
+        if(childNodes.item (i).nodeName ()=="results"){
+            return childNodes.item (i);
+        }
+    }
+    return NULL;
+}
 
 //Parameters
 QDomNode Xmlcontroller::getParametersNode() {
@@ -80,9 +164,9 @@ QDomNode Xmlcontroller::getParametersNode() {
 
     //Find the node with the right tag name
     for(int i=0; i<childNodes.length (); i++){
-        QDomNode tmpNode(childNodes.item (i));
-        if(tmpNode.nodeName ()=="parameters") {
-            return tmpNode;
+        if(childNodes.item (i).nodeName ()=="parameters") {
+            return childNodes.item (i);
         }
     }
+    return NULL;
 }
