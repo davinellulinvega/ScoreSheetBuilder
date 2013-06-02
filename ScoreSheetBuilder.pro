@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     periodcontroller.cpp \
     scorecontroller.cpp \
     studentcontroller.cpp \
-    xmlcontroller.cpp
+    xmlcontroller.cpp \
+    result.cpp
 
 HEADERS  += \
     classroom.h \
@@ -41,6 +42,7 @@ HEADERS  += \
     periodcontroller.h \
     scorecontroller.h \
     studentcontroller.h \
-    xmlcontroller.h
+    xmlcontroller.h \
+    result.h
 
 FORMS    +=
