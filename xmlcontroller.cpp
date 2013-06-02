@@ -61,3 +61,6 @@ QDomNode getStudentsNode (int classId);
 
 //Result
 QDomNode getResultsNode (int classId, int periodId);
+
+//Parameters
+QDomNode getParametersNode();

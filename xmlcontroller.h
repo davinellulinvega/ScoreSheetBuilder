@@ -34,6 +34,9 @@ public:
     //Result
     QDomNode getResultsNode (int classId, int periodId);
 
+    //Parameters
+    QDomNode getParametersNode ();
+
     //Methods
     bool save();
 protected:
