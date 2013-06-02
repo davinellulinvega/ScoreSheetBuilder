@@ -14,8 +14,8 @@ public:
     //Methods
     bool add(Score score);
     bool update(Score score);
-    bool remove(id);
-    Score query(id);
+    bool remove(int id);
+    Score query(int id);
     vector<Score> queryAll();
 
     //Static methods
