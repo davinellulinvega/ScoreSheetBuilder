@@ -1,5 +1,5 @@
 #include "parameterscontroller.h"
 
-ParametersController::ParametersController()
-{
+ParametersController::ParametersController() {
+
 }

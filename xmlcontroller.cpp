@@ -171,6 +171,7 @@ QDomNode Xmlcontroller::getParametersNode() {
     return NULL;
 }
 
+//Methods
 bool Xmlcontroller::save () {
     //Open the file
     QFile database("database.xml");
@@ -184,4 +185,8 @@ bool Xmlcontroller::save () {
     textStream << this->document->toString ();
 
     return true;
+}
+
+QDomElement Xmlcontroller::createElement (string elemName) {
+    return this->document->createElement (elemName);
 }

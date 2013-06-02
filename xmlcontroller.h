@@ -39,6 +39,8 @@ public:
 
     //Methods
     bool save();
+    QDomElement createElement(string elemName);
+
 protected:
     QDomDocument *document;
     QDomElement domElement;

@@ -16,7 +16,8 @@ QDomNode StudentController::getStudentsNode () {
 
 //Methods
 bool StudentController::add(Student student) {
-
+    //Create a new element
+    QDomElement student();
 }
 
 bool StudentController::update(Student student) {
@@ -66,4 +67,4 @@ Student StudentController::query(int id);
 vector<Student> StudentController::queryAll();
 
 //Static Methods
-static bool StudentController::isValidId(id);
+static bool StudentController::isValidId(int id);
