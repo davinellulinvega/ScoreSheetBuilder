@@ -12,7 +12,7 @@ public:
     ResultController(QDomNode &reslutsNode);
 
     //Methods
-    bool add(Result result);
+    bool add(Result result, QDomElement resultElem);
     bool update(Result result);
     bool remove(int id);
     Result query(int id);

@@ -25,9 +25,9 @@ int Parameters::getClassroom() {
     return this->m_classRoom;
 }
 
-void Parameters::setClassroom(int id) {
+void Parameters::setClassroom(int id, ClassRoomController classroomController) {
     //If the id is part of the available ids
-    if(ClassRoomController::isValidId(id)) {
+    if(classroomController.isValidId(id)) {
         this->m_classRoom=id;
     }
 }

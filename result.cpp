@@ -1,7 +1,7 @@
 #include "result.h"
 
 //Constructor
-Result::Result()
+Result::Result(int id, int stdId, int lectId, int markId):m_id(id),m_studentId(stdId),m_lectureId(lectId),m_markId(markId)
 {
 }
 

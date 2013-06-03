@@ -5,7 +5,7 @@ class Result
 {
 public:
     //Constructor
-    Result();
+    Result(int id, int stdId, int lectId, int markId);
 
     //Getter and Setter
     //Id
