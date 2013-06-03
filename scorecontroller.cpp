@@ -13,6 +13,7 @@ Score ScoreController::query(int id) {
             return new Score(this->m_scores.item (i).toElement ().attribute ("id",0).toInt (), this->m_scores.item (i).toElement ().attribute ("mark"));
         }
     }
+    return NULL;
 }
 
 vector<Score> ScoreController::queryAll() {

@@ -76,19 +76,14 @@ bool StudentController::remove(int id) {
 }
 
 Student StudentController::query(int id) {
-    //Parameters
-    QDomElement studentXml;
-
     //Get the studentXml corresponding to id
     for(int i=0; i<this->m_students.length (); i++) {
         if(this->m_students.item (i).toElement ().attribute ("id",0).toInt ()==id) {
-            studentXml=this->m_students.item (i).toElement ();
-            break;
+            QDomElement studentXml=this->m_students.item (i).toElement ();
+            return new Student(studentXml.attributeNode ("id"),studentXml.attributeNode ("fName"),studentXml.attributeNode ("name"),studentXml.attributeNode ("globalComment"));
         }
     }
-
-    //Return the student
-    return new Student(studentXml.attributeNode ("id"),studentXml.attributeNode ("fName"),studentXml.attributeNode ("name"),studentXml.attributeNode ("globalComment"))
+    return NULL;
 }
 
 vector<Student> StudentController::queryAll() {

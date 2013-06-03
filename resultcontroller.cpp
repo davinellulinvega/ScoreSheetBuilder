@@ -56,6 +56,7 @@ Result ResultController::query(int id) {
             return new Result(m_results.item (i).toElement ().attribute ("id",0).toInt (), m_results.item (i).toElement ().attribute ("student",0).toInt (), m_results.item (i).toElement ().attribute ("lecture",0).toInt (), m_results.item (i).toElement ().attribute ("mark",0).toInt ());
         }
     }
+    return NULL;
 }
 
 vector<Result> ResultController::queryAll() {
