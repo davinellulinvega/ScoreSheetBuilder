@@ -13,8 +13,8 @@
 						<lecture id="1" title="lect2" />
 					</lectures>
 					<results>
-						<result id="0" student="0" lecture="1" mark="B" />
-						<result id="1" student="1" lecture="1" mark="C" />
+						<result id="0" student="0" lecture="1" mark="1" />
+						<result id="1" student="1" lecture="1" mark="2" />
 					</results>
 				</period>
 				<period id="1">

@@ -21,9 +21,7 @@ public:
     bool remove(id);
     Student query(id);
     vector<Student> queryAll();
-
-    //Static Methods
-    static bool isValidId(id);
+    bool isValidId(id);
 
 private:
     QDomNodeList m_students;
