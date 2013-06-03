@@ -27,9 +27,10 @@ bool ClassRoomController::update(ClassRoom classRoom) {
         if(this->m_classrooms.item (i).toElement ().attribute ("id").toInt ()==classRoom.getId ()) {
             QDomElement updateElem(this->m_classrooms.item (i).toElement ());
             updateElem.setAttribute ("title",classRoom.getTitle ());
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 bool ClassRoomController::remove(int id) {
@@ -43,23 +44,23 @@ bool ClassRoomController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    this->m_classroomsNode.removeChild (rmNode);
-    //Update the node list
-    this->m_classrooms=this->m_classroomsNode.childNodes ();
-    return true;
+    if(this->m_classroomsNode.removeChild (rmNode)) {
+        //Update the node list
+        this->m_classrooms=this->m_classroomsNode.childNodes ();
+        return true;
+    }
+    return false;
 }
 
 ClassRoom ClassRoomController::query(int id) {
     //Get the element corresponding to id
-    QDomElement classroomXml;
     for(int i=0; i<this->m_classrooms.length (); i++) {
         if(this->m_classrooms.item (i).toElement ().attribute ("id",0).toInt ()==id) {
-            classroomXml=this->m_classrooms.item (i).toElement ();
-            break;
+            QDomElement classroomXml=this->m_classrooms.item (i).toElement ();
+            return new ClassRoom(classroomXml.attribute ("id",0).toInt (),classroomXml.attribute ("title"));
         }
     }
-    //Return a ClassRoom
-    return new ClassRoom(classroomXml.attribute ("id",0).toInt (),classroomXml.attribute ("title"));
+    return NULL;
 }
 
 vector<ClassRoom> ClassRoomController::queryAll() {
