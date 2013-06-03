@@ -12,8 +12,7 @@ public:
     PeriodController(QDomNode &periodsNode);
 
     //Methods
-    bool add(Period period);
-    bool update(Period period);
+    bool add(Period period, QDomElement periodElem);
     bool remove(int id);
     Period query(int id);
     vector<Period> queryAll();

@@ -1,7 +1,7 @@
 #include "period.h"
 
 //Constructor
-Period::Period()
+Period::Period(int id)m_id(id)
 {
 }
 

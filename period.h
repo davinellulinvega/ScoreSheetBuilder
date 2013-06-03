@@ -5,7 +5,7 @@ class Period
 {
 public:
     //Constructor
-    Period();
+    Period(int id);
 
     //Getter
     int getId();
