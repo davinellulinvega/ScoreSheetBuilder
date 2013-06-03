@@ -3,7 +3,7 @@
 #include "periodcontroller.h"
 
 //Constructor
-Parameters::Parameters()
+Parameters::Parameters(bool modifs, int classId, int periodId):m_modifs(modifs),m_classRoom(classId),m_period(periodId)
 {
 }
 

@@ -9,7 +9,7 @@ class Parameters
 {
 public:
     //Constructor
-    Parameters();
+    Parameters(bool modifs, int classId, int periodId);
 
     //Getter & Setter
     //Modifs
