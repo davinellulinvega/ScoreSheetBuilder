@@ -41,10 +41,12 @@ bool ResultController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    this->m_resultsNode.removeChild (rmNode);
-    //Update the node list
-    this->m_results=this->m_resultsNode.childNodes ();
-    return true;
+    if(this->m_resultsNode.removeChild (rmNode)) {
+        //Update the node list
+        this->m_results=this->m_resultsNode.childNodes ();
+        return true;
+    }
+    return false;
 }
 
 Result ResultController::query(int id) {
