@@ -1,4 +1,4 @@
-#include "classroomcontroller.h"
+﻿#include "classroomcontroller.h"
 #include "studentcontroller.h"
 
 //Constructor
@@ -18,6 +18,7 @@ bool ClassRoomController::add(ClassRoom classRoom, QDomElement classroomXml) {
     this->m_classroomsNode.appendChild (classroomXml);
     //Update the childNodes
     this->m_classrooms=this->m_classroomsNode.childNodes ();
+    return true;
 }
 
 bool ClassRoomController::update(ClassRoom classRoom) {
@@ -28,6 +29,7 @@ bool ClassRoomController::update(ClassRoom classRoom) {
             updateElem.setAttribute ("title",classRoom.getTitle ());
         }
     }
+    return true;
 }
 
 bool ClassRoomController::remove(int id) {
@@ -44,6 +46,7 @@ bool ClassRoomController::remove(int id) {
     this->m_classroomsNode.removeChild (rmNode);
     //Update the node list
     this->m_classrooms=this->m_classroomsNode.childNodes ();
+    return true;
 }
 
 ClassRoom ClassRoomController::query(int id) {
@@ -70,7 +73,6 @@ vector<ClassRoom> ClassRoomController::queryAll() {
     return classrooms;
 }
 
-//Static Methods
 bool ClassRoomController::isValidId(int id) {
     //Verify all the ids
     for(int i=0; i<this->m_classrooms.length (); i++) {

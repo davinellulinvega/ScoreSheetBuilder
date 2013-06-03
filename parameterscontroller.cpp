@@ -15,6 +15,7 @@ bool ParametersController::update(Parameters parameters) {
     parameter.setAttribute ("modifs","true");
     parameter.setAttribute ("classroom",parameters.getClassroom ());
     parameter.setAttribute ("period",parameters.getPeriod ());
+    return true;
 }
 
 Parameters ParametersController::query() {
