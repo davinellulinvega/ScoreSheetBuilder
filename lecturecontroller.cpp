@@ -39,10 +39,12 @@ bool LectureController::remove(int id) {
         }
     }
     //Remove the node
-    this->m_lecturesNode.removeChild (rmNode);
-    //Update the node list
-    this->m_lectures=this->m_lecturesNode.childNodes ();
-    return true;
+    if(this->m_lecturesNode.removeChild (rmNode)) {
+        //Update the node list
+        this->m_lectures=this->m_lecturesNode.childNodes ();
+        return true;
+    }
+    return false;
 }
 
 Lecture LectureController::query(int id) {
@@ -52,6 +54,7 @@ Lecture LectureController::query(int id) {
             return new Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title"));
         }
     }
+    return NULL;
 }
 
 vector<Lecture> LectureController::queryAll() {
