@@ -12,9 +12,6 @@ public:
     ScoreController(QDomNode &scoresNode);
 
     //Methods
-    bool add(Score score);
-    bool update(Score score);
-    bool remove(int id);
     Score query(int id);
     vector<Score> queryAll();
 

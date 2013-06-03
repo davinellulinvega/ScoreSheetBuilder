@@ -1,7 +1,7 @@
 #include "score.h"
 
 //Constructor
-Score::Score()
+Score::Score(int id, char mark):m_id(id),m_mark(mark)
 {
 }
 

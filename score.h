@@ -9,7 +9,7 @@ class Score
 {
 public:
     //Constructor
-    Score();
+    Score(int id, char mark);
 
     //Getter & Setter
     //Id
