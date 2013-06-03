@@ -11,7 +11,7 @@ class Lecture
 {
 public:
     //Constructor
-    Lecture();
+    Lecture(int id, string title);
 
     //Getter & Setter
     //Id

@@ -1,8 +1,66 @@
 #include "lecturecontroller.h"
 
-LectureController::LectureController(QDomNode &lecturesNode)
+//Constructor
+LectureController::LectureController(QDomNode &lecturesNode):m_lecturesNode(lecturesNode),m_lectures(m_lecturesNode.childNodes ())
 {
-    //Simply assign the parameters to the attributs
-    this->m_lecturesNode=lecturesNode;
+}
+
+//Methods
+bool LectureController::add(Lecture lecture, QDomElement lectureElem) {
+    //Set the attributes
+    lectureElem.setAttribute ("id",lecture.getId ());
+    lectureElem.setAttribute ("title", lecture.getTitle ());
+    //Add the child to the tree
+    this->m_lecturesNode.appendChild (lectureElem);
+    //Update the child node list
     this->m_lectures=this->m_lecturesNode.childNodes ();
+    return true;
+}
+
+bool LectureController::update(Lecture lecture) {
+    //Get the element corresponding to the lecture
+    for(int i=0; i<this->m_lectures.length (); i++) {
+        if(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt ()==lecture.getId ()) {
+            //Update the attribute title
+            this->m_lectures.item (i).toElement ().setAttribute ("title", lecture.getTitle ());
+            return true;
+        }
+    }
+    return false;
+}
+
+bool LectureController::remove(int id) {
+    //Get the node to remove
+    QDomNode rmNode;
+    for(int i=0; i<this->m_lectures.length (); i++) {
+        if(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt ()==id) {
+            rmNode=this->m_lectures.item (i);
+            break;
+        }
+    }
+    //Remove the node
+    this->m_lecturesNode.removeChild (rmNode);
+    //Update the node list
+    this->m_lectures=this->m_lecturesNode.childNodes ();
+    return true;
+}
+
+Lecture LectureController::query(int id) {
+    //Get the element
+    for(int i=0; i<this->m_lectures.length (); i++) {
+        if(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt ()==id) {
+            return new Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title"));
+        }
+    }
+}
+
+vector<Lecture> LectureController::queryAll() {
+    //Create an empty vector
+    vector<Lecture> lectures;
+    //Fill in the vector
+    for(int i=0; i<this->m_lectures.length (); i++) {
+        lectures.push_back (Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title")));
+    }
+    //Return the vector
+    return lectures;
 }

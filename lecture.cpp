@@ -1,7 +1,7 @@
 #include "lecture.h"
 
 //Constructor
-Lecture::Lecture()
+Lecture::Lecture(int id, string title):m_id(id),m_title(title)
 {
 }
 

@@ -12,7 +12,7 @@ public:
     LectureController(QDomNode &lecturesNode);
 
     //Methods
-    bool add(Lecture lecture);
+    bool add(Lecture lecture, QDomElement lectureElem);
     bool update(Lecture lecture);
     bool remove(int id);
     Lecture query(int id);
