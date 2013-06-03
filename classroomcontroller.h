@@ -12,14 +12,12 @@ public:
     ClassRoomController(QDomNode &classroomsNode);
 
     //Methods
-    bool add(ClassRoom classRoom);
+    bool add(ClassRoom classRoom, QDomElement classroomXml);
     bool update(ClassRoom classRoom);
     bool remove(int id);
     ClassRoom query(int id);
     vector<ClassRoom> queryAll();
-
-    //Static Methods
-    static bool isValidId(int id);
+    bool isValidId(int id);
 
 private:
     QDomNodeList m_classrooms;

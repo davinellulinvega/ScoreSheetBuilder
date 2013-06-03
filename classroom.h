@@ -13,7 +13,7 @@ class ClassRoom
 {
 public:
     //Constructor
-    ClassRoom();
+    ClassRoom(int id, string title);
 
     //Getter & Setter
     //Id

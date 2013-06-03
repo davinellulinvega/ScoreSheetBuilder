@@ -1,7 +1,7 @@
 #include "classroom.h"
 
 //Constructor
-ClassRoom::ClassRoom()
+ClassRoom::ClassRoom(int id, string title):m_id(id),m_title(title)
 {
 }
 

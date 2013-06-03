@@ -39,7 +39,7 @@ bool StudentController::update(Student student) {
         QDomElement tmpElem(this->m_students.item (i).toElement ());
 
         //If the id correspond
-        if(tmpElem.attributeNode ("id")==updateId) {
+        if(tmpElem.attribute ("id",0).toInt ()==updateId) {
             //Update the attributes
             tmpElem.setAttribute ("fName",student.getFirstName ());
             tmpElem.setAttribute ("name",student.getName ());
@@ -57,7 +57,7 @@ bool StudentController::remove(int id) {
     //Get the node to be removed
     for(int i=0; i<this->m_students.length (); i++) {
         QDomElement tmpElem(this->m_students.item (i).toElement ());
-        if(tmpElem.attributeNode ("id")==id) {
+        if(tmpElem.attribute ("id",0).toInt ()==id) {
             rmNode=this->m_students.item (i);
             break;
         }
@@ -78,7 +78,7 @@ Student StudentController::query(int id) {
 
     //Get the studentXml corresponding to id
     for(int i=0; i<this->m_students.length (); i++) {
-        if(this->m_students.item (i).toElement ().attributeNode ("id")==id) {
+        if(this->m_students.item (i).toElement ().attribute ("id",0).toInt ()==id) {
             studentXml=this->m_students.item (i).toElement ();
             break;
         }
