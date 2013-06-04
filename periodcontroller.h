@@ -1,9 +1,9 @@
 #ifndef PERIODCONTROLLER_H
 #define PERIODCONTROLLER_H
 
-#include <vector>
 #include <QtXml>
 #include "period.h"
+#include <vector>
 
 class PeriodController
 {

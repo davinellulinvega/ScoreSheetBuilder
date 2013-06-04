@@ -17,5 +17,5 @@ public:
 private:
     QDomNode m_parametersNode;
     QDomNodeList m_parameters;
-
+};
 #endif // PARAMETERSCONTROLLER_H
