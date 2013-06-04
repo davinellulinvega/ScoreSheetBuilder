@@ -1,5 +1,4 @@
 #include "parameters.h"
-#include "classroomcontroller.h"
 #include "periodcontroller.h"
 
 //Constructor
@@ -25,11 +24,8 @@ int Parameters::getClassroom() {
     return this->m_classRoom;
 }
 
-void Parameters::setClassroom(int id, ClassRoomController classroomController) {
-    //If the id is part of the available ids
-    if(classroomController.isValidId(id)) {
-        this->m_classRoom=id;
-    }
+void Parameters::setClassroom(int id) {
+    this->m_classRoom=id;
 }
 
 //Period

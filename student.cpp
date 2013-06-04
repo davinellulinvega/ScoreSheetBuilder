@@ -1,5 +1,7 @@
 #include "student.h"
 
+using namespace std;
+
 //Constructor
 Student::Student(int id, string fName, string name, string globalCom):m_id(id),m_firstName(fName),m_name(name),m_globalComment(globalCom)
 {

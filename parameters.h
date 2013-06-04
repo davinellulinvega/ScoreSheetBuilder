@@ -18,7 +18,7 @@ public:
 
     //Classroom
     int getClassroom();
-    void setClassroom(int id, ClassRoomController classroomController);
+    void setClassroom(int id);
 
     //Period
     int getPeriod();

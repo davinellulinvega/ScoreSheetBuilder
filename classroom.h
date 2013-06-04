@@ -6,9 +6,6 @@
 #include <vector>
 #include "student.h"
 
-//Namespace
-using namespace std;
-
 class ClassRoom
 {
 public:

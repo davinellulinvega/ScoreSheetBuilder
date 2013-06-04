@@ -5,9 +5,6 @@
 #include <iostream>
 #include <string>
 
-//Namespace
-using namespace std;
-
 class Student
 {
 public:

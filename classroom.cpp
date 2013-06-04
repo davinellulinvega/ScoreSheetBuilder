@@ -1,5 +1,7 @@
 #include "classroom.h"
 
+using namespace std;
+
 //Constructor
 ClassRoom::ClassRoom(int id, string title):m_id(id),m_title(title)
 {
