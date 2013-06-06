@@ -14,8 +14,8 @@ public:
     //Methods
     bool add(Period period, QDomElement periodElem);
     bool remove(int id);
-    Period query(int id);
-    QList<Period> queryAll();
+    Period *query(int id);
+    QList<Period *> queryAll();
 
     //Static methods
     static bool isValidId(int id);

@@ -39,7 +39,7 @@ bool LectureController::remove(int id) {
         }
     }
     //Remove the node
-    if(this->m_lecturesNode.removeChild (rmNode)) {
+    if(!this->m_lecturesNode.removeChild (rmNode).isNull ()) {
         //Update the node list
         this->m_lectures=this->m_lecturesNode.childNodes ();
         return true;
@@ -47,7 +47,7 @@ bool LectureController::remove(int id) {
     return false;
 }
 
-Lecture LectureController::query(int id) {
+Lecture *LectureController::query(int id) {
     //Get the element
     for(int i=0; i<this->m_lectures.length (); i++) {
         if(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt ()==id) {
@@ -57,9 +57,9 @@ Lecture LectureController::query(int id) {
     return NULL;
 }
 
-QList<Lecture> LectureController::queryAll() {
+QList<Lecture *> LectureController::queryAll() {
     //Create an empty QList
-    QList<Lecture> lectures;
+    QList<Lecture *> lectures;
     //Fill in the QList
     for(int i=0; i<this->m_lectures.length (); i++) {
         lectures.push_back (Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title")));

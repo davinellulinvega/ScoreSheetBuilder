@@ -15,8 +15,8 @@ public:
     bool add(ClassRoom classRoom, QDomElement classroomXml);
     bool update(ClassRoom classRoom);
     bool remove(int id);
-    ClassRoom query(int id);
-    QList<ClassRoom> queryAll();
+    ClassRoom *query(int id);
+    QList<ClassRoom *> queryAll();
     bool isValidId(int id);
 
 private:

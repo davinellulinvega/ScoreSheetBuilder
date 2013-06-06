@@ -15,8 +15,8 @@ public:
     bool add(Lecture lecture, QDomElement lectureElem);
     bool update(Lecture lecture);
     bool remove(int id);
-    Lecture query(int id);
-    QList<Lecture> queryAll();
+    Lecture *query(int id);
+    QList<Lecture *> queryAll();
 
     //Static methods
 

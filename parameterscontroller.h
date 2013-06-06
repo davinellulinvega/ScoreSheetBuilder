@@ -12,7 +12,7 @@ public:
 
     //Methods
     bool update(Parameters parameters);
-    Parameters query();
+    Parameters *query();
 
 private:
     QDomNode m_parametersNode;

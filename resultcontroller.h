@@ -15,8 +15,8 @@ public:
     bool add(Result result, QDomElement resultElem);
     bool update(Result result);
     bool remove(int id);
-    Result query(int id);
-    QList<Result> queryAll();
+    Result *query(int id);
+    QList<Result *> queryAll();
 
 private:
     QDomNodeList m_results;

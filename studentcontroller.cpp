@@ -65,7 +65,7 @@ bool StudentController::remove(int id) {
     }
 
     //Remove the node from the tree
-    if(this->m_studentsNode.removeChild (rmNode)) {
+    if(!this->m_studentsNode.removeChild (rmNode).isNull ()) {
         //Update the node list
         this->m_students=this->m_studentsNode.childNodes ();
         return true;
@@ -75,7 +75,7 @@ bool StudentController::remove(int id) {
     }
 }
 
-Student StudentController::query(int id) {
+Student *StudentController::query(int id) {
     //Get the studentXml corresponding to id
     for(int i=0; i<this->m_students.length (); i++) {
         if(this->m_students.item (i).toElement ().attribute ("id",0).toInt ()==id) {
@@ -86,9 +86,9 @@ Student StudentController::query(int id) {
     return NULL;
 }
 
-QList<Student> StudentController::queryAll() {
+QList<Student *> StudentController::queryAll() {
     //Create a new QList
-    QList<Student> students;
+    QList<Student *> students;
 
     //Fill in the QList
     for(int i=0; i<this->m_students.length (); i++) {

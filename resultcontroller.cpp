@@ -41,7 +41,7 @@ bool ResultController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    if(this->m_resultsNode.removeChild (rmNode)) {
+    if(!this->m_resultsNode.removeChild (rmNode).isNull ()) {
         //Update the node list
         this->m_results=this->m_resultsNode.childNodes ();
         return true;
@@ -49,7 +49,7 @@ bool ResultController::remove(int id) {
     return false;
 }
 
-Result ResultController::query(int id) {
+Result *ResultController::query(int id) {
     //Get the element corresponding to id
     for(int i=0; i<this->m_results.length (); i++) {
         if(this->m_results.item (i).toElement ().attribute ("id",0).toInt ()==id) {
@@ -59,9 +59,9 @@ Result ResultController::query(int id) {
     return NULL;
 }
 
-QList<Result> ResultController::queryAll() {
+QList<Result *> ResultController::queryAll() {
     //Create an empty QList
-    QList<Result> results;
+    QList<Result *> results;
     //Fill in the QList
     for(int i=0; i<this->m_results.length (); i++) {
         results.push_back(new Result(m_results.item (i).toElement ().attribute ("id",0).toInt (), m_results.item (i).toElement ().attribute ("student",0).toInt (), m_results.item (i).toElement ().attribute ("lecture",0).toInt (), m_results.item (i).toElement ().attribute ("mark",0).toInt ()));

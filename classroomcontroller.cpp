@@ -52,7 +52,7 @@ bool ClassRoomController::remove(int id) {
     return false;
 }
 
-ClassRoom ClassRoomController::query(int id) {
+ClassRoom* ClassRoomController::query(int id) {
     //Get the element corresponding to id
     for(int i=0; i<this->m_classrooms.length (); i++) {
         if(this->m_classrooms.item (i).toElement ().attribute ("id",0).toInt ()==id) {
@@ -63,9 +63,9 @@ ClassRoom ClassRoomController::query(int id) {
     return NULL;
 }
 
-QList<ClassRoom> ClassRoomController::queryAll() {
+QList<ClassRoom *> ClassRoomController::queryAll() {
     //Create a new QList
-    QList<ClassRoom> classrooms;
+    QList<ClassRoom *> classrooms;
     //Fill in the QList
     for(int i=0; i<this->m_classrooms.length (); i++) {
         classrooms.push_back (new ClassRoom(this->m_classrooms.item (i).toElement ().attribute ("id",0).toInt (), this->m_classrooms.item (i).toElement ().attribute ("title")));

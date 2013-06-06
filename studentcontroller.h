@@ -19,8 +19,8 @@ public:
     bool add(Student student, QDomElement studentElem);
     bool update(Student student);
     bool remove(int id);
-    Student query(int id);
-    QList<Student> queryAll();
+    Student *query(int id);
+    QList<Student *> queryAll();
     bool isValidId(int id);
 
 private:

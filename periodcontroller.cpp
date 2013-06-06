@@ -30,7 +30,7 @@ bool PeriodController::remove(int id) {
         }
     }
     //Remove the node
-    if(this->m_periodsNode.removeChild (rmNode)) {
+    if(!this->m_periodsNode.removeChild (rmNode).isNull ()) {
         //Update the node list
         this->m_periods=this->m_periodsNode.childNodes ();
         return true;
@@ -38,7 +38,7 @@ bool PeriodController::remove(int id) {
     return false;
 }
 
-Period PeriodController::query(int id) {
+Period *PeriodController::query(int id) {
     //Get the element corresponding to id
     for(int i=0; i<this->m_periods.length (); i++) {
         if(this->m_periods.item (i).toElement ().attribute ("id",0).toInt ()==id) {
@@ -49,9 +49,9 @@ Period PeriodController::query(int id) {
     return NULL;
 }
 
-QList<Period> PeriodController::queryAll() {
+QList<Period *> PeriodController::queryAll() {
     //Create an empty QList
-    QList<Period> periods;
+    QList<Period *> periods;
     //Fill in the QList
     for(int i=0; i<this->m_periods.length (); i++) {
         periods.push_back (new Period(this->m_periods.item (i).toElement ().attribute ("id",0).toInt ()));

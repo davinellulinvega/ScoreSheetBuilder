@@ -18,7 +18,7 @@ bool ParametersController::update(Parameters parameters) {
     return true;
 }
 
-Parameters ParametersController::query() {
+Parameters *ParametersController::query() {
     //Get the parameter element
     QDomElement parameters(this->m_parametersNode.firstChildElement ("parameter"));
     //Return the parameters

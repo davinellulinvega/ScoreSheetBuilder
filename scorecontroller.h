@@ -12,8 +12,8 @@ public:
     ScoreController(QDomNode &scoresNode);
 
     //Methods
-    Score query(int id);
-    QList<Score> queryAll();
+    Score *query(int id);
+    QList<Score *> queryAll();
 
     //Static methods
 
