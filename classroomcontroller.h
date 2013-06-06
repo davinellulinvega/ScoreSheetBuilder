@@ -9,7 +9,7 @@ class ClassRoomController
 {
 public:
     //Constructor
-    ClassRoomController(QDomNode &classroomsNode);
+    ClassRoomController(QDomNode *classroomsNode);
 
     //Methods
     bool add(ClassRoom classRoom, QDomElement classroomXml);
@@ -21,7 +21,7 @@ public:
 
 private:
     QDomNodeList m_classrooms;
-    QDomNode m_classroomsNode;
+    QDomNode *m_classroomsNode;
 };
 
 #endif // CLASSROOMCONTROLLER_H

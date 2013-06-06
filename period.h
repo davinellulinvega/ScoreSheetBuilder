@@ -6,6 +6,7 @@ class Period
 public:
     //Constructor
     Period(int id);
+    Period(Period *period);
 
     //Getter
     int getId();

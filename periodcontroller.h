@@ -9,7 +9,7 @@ class PeriodController
 {
 public:
     //Constructor
-    PeriodController(QDomNode &periodsNode);
+    PeriodController(QDomNode *periodsNode);
 
     //Methods
     bool add(Period period, QDomElement periodElem);
@@ -21,7 +21,7 @@ public:
     static bool isValidId(int id);
 private:
     QDomNodeList m_periods;
-    QDomNode m_periodsNode;
+    QDomNode *m_periodsNode;
 };
 
 #endif // PERIODCONTROLLER_H

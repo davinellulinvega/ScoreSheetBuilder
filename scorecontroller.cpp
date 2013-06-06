@@ -1,7 +1,7 @@
 #include "scorecontroller.h"
 
 //Constructor
-ScoreController::ScoreController(QDomNode &scoresNode):m_scoresNode(scoresNode),m_scores(m_scoresNode.childNodes ())
+ScoreController::ScoreController(QDomNode *scoresNode):m_scoresNode(scoresNode),m_scores(m_scoresNode->childNodes ())
 {
 }
 

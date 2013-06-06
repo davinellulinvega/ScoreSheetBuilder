@@ -1,11 +1,11 @@
 #include "periodcontroller.h"
 
 //Constructor
-PeriodController::PeriodController(QDomNode &periodsNode)
+PeriodController::PeriodController(QDomNode *periodsNode)
 {
     //Simply assign the parameters to the attributs
     this->m_periodsNode=periodsNode;
-    this->m_periods=this->m_periodsNode.childNodes ();
+    this->m_periods=this->m_periodsNode->childNodes ();
 }
 
 
@@ -14,9 +14,9 @@ bool PeriodController::add(Period period, QDomElement periodElem) {
     //Set the id attribute
     periodElem.setAttribute ("id", period.getId ());
     //Add the element to the tree
-    this->m_periodsNode.appendChild (periodElem);
+    this->m_periodsNode->appendChild (periodElem);
     //Update the node list
-    this->m_periods=this->m_periodsNode.childNodes ();
+    this->m_periods=this->m_periodsNode->childNodes ();
     return true;
 }
 
@@ -30,9 +30,9 @@ bool PeriodController::remove(int id) {
         }
     }
     //Remove the node
-    if(!this->m_periodsNode.removeChild (rmNode).isNull ()) {
+    if(!this->m_periodsNode->removeChild (rmNode).isNull ()) {
         //Update the node list
-        this->m_periods=this->m_periodsNode.childNodes ();
+        this->m_periods=this->m_periodsNode->childNodes ();
         return true;
     }
     return false;

@@ -9,7 +9,7 @@ class LectureController
 {
 public:
     //Constructor
-    LectureController(QDomNode &lecturesNode);
+    LectureController(QDomNode *lecturesNode);
 
     //Methods
     bool add(Lecture lecture, QDomElement lectureElem);
@@ -22,7 +22,7 @@ public:
 
 private:
     QDomNodeList m_lectures;
-    QDomNode m_lecturesNode;
+    QDomNode *m_lecturesNode;
 };
 
 #endif // LECTURECONTROLLER_H

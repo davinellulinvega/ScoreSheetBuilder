@@ -9,6 +9,7 @@ class Student
 public:
     //Constructor
     Student(int id, QString fName, QString name, QString globalCom);
+    Student(Student *student);
 
     //Getter & Setter
     //Id

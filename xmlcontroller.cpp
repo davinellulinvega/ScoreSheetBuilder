@@ -8,7 +8,7 @@ Xmlcontroller::Xmlcontroller(QWidget *parent) :
     this->document=new QDomDocument("database");
 
     //Try to open the xml document in read-only
-    QFile xmlDoc("database.xml");
+    QFile xmlDoc("./database.xml");
 
     if(!xmlDoc.open (QIODevice::ReadOnly)) {
         QMessageBox::warning (this,"Error: Opening database","The program couldn't open the database. Maybe the file doesn't exist.");
@@ -26,8 +26,7 @@ Xmlcontroller::Xmlcontroller(QWidget *parent) :
     xmlDoc.close ();
 
     //Get the first child -> root
-    this->domElement=this->document->documentElement ();
-    this->root=this->domElement.firstChild ();
+    this->root=this->document->documentElement ();
 }
 
 //Getter
@@ -161,7 +160,6 @@ QDomNode *Xmlcontroller::getResultsNode (int classId, int periodId) {
 QDomNode *Xmlcontroller::getParametersNode() {
     //Get the child nodes
     QDomNodeList childNodes(this->root.childNodes ());
-
     //Find the node with the right tag name
     for(int i=0; i<childNodes.length (); i++){
         if(childNodes.item (i).nodeName ()=="parameters") {

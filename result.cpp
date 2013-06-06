@@ -5,6 +5,10 @@ Result::Result(int id, int stdId, int lectId, int markId):m_id(id),m_studentId(s
 {
 }
 
+Result::Result(Result *result):m_id(result->getId ()),m_studentId(result->getStudentId ()),m_lectureId(result->getLectureId ()),m_markId(result->getMarkId ())
+{
+}
+
 //Getter and Setter
 //Id
 int Result::getId () {

@@ -9,6 +9,7 @@ class Lecture
 public:
     //Constructor
     Lecture(int id, QString title);
+    Lecture(Lecture *lecture);
 
     //Getter & Setter
     //Id

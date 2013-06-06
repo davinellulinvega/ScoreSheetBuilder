@@ -5,6 +5,10 @@ Lecture::Lecture(int id, QString title):m_id(id),m_title(title)
 {
 }
 
+Lecture::Lecture(Lecture *lecture):m_id(lecture->getId ()),m_title(lecture->getTitle ())
+{
+}
+
 //Getter & Setter
 //Id
 int Lecture::getId() {

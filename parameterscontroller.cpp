@@ -3,7 +3,6 @@
 //Constructor
 ParametersController::ParametersController(QDomNode *parametersNode):m_parametersNode(parametersNode),m_parameters(m_parametersNode->childNodes ())
 {
-    this->query ();
 }
 
 //Methods

@@ -1,9 +1,10 @@
 ﻿#include "classroomcontroller.h"
-#include "studentcontroller.h"
 
 //Constructor
-ClassRoomController::ClassRoomController(QDomNode &classroomsNode):m_classroomsNode(classroomsNode),m_classrooms(m_classroomsNode.childNodes ())
+ClassRoomController::ClassRoomController(QDomNode *classroomsNode)
 {
+    m_classroomsNode=classroomsNode;
+    m_classrooms=m_classroomsNode->childNodes ();
 }
 
 //Methods
@@ -15,9 +16,9 @@ bool ClassRoomController::add(ClassRoom classRoom, QDomElement classroomXml) {
     classroomXml.setAttribute ("id", classRoom.getId ());
     classroomXml.setAttribute ("title",classRoom.getTitle ());
     //Add the element to the node
-    this->m_classroomsNode.appendChild (classroomXml);
+    this->m_classroomsNode->appendChild (classroomXml);
     //Update the childNodes
-    this->m_classrooms=this->m_classroomsNode.childNodes ();
+    this->m_classrooms=this->m_classroomsNode->childNodes ();
     return true;
 }
 
@@ -44,9 +45,9 @@ bool ClassRoomController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    if(!this->m_classroomsNode.removeChild (rmNode).isNull ()) {
+    if(!this->m_classroomsNode->removeChild (rmNode).isNull ()) {
         //Update the node list
-        this->m_classrooms=this->m_classroomsNode.childNodes ();
+        this->m_classrooms=this->m_classroomsNode->childNodes ();
         return true;
     }
     return false;

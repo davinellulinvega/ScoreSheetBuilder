@@ -9,7 +9,7 @@ class ScoreController
 {
 public:
     //Constructor
-    ScoreController(QDomNode &scoresNode);
+    ScoreController(QDomNode *scoresNode);
 
     //Methods
     Score *query(int id);
@@ -19,7 +19,7 @@ public:
 
 private:
     QDomNodeList m_scores;
-    QDomNode m_scoresNode;
+    QDomNode *m_scoresNode;
 };
 
 #endif // SCORECONTROLLER_H

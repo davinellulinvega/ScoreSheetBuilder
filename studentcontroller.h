@@ -9,11 +9,11 @@ class StudentController
 {
 public:
     //Constructor
-    StudentController(QDomNode &studentsNode);
+    StudentController(QDomNode *studentsNode);
 
     //Getters
     QDomNodeList getStudents();
-    QDomNode getStudentsNode();
+    QDomNode *getStudentsNode();
 
     //Methods
     bool add(Student student, QDomElement studentElem);
@@ -25,7 +25,7 @@ public:
 
 private:
     QDomNodeList m_students;
-    QDomNode m_studentsNode;
+    QDomNode *m_studentsNode;
 };
 
 #endif // STUDENTCONTROLLER_H

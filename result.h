@@ -6,6 +6,7 @@ class Result
 public:
     //Constructor
     Result(int id, int stdId, int lectId, int markId);
+    Result(Result *result);
 
     //Getter and Setter
     //Id

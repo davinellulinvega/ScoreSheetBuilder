@@ -1,8 +1,10 @@
 #include "lecturecontroller.h"
 
 //Constructor
-LectureController::LectureController(QDomNode &lecturesNode):m_lecturesNode(lecturesNode),m_lectures(m_lecturesNode.childNodes ())
+LectureController::LectureController(QDomNode *lecturesNode)
 {
+    m_lecturesNode=lecturesNode;
+    m_lectures=m_lecturesNode->childNodes ();
 }
 
 //Methods
@@ -11,9 +13,9 @@ bool LectureController::add(Lecture lecture, QDomElement lectureElem) {
     lectureElem.setAttribute ("id",lecture.getId ());
     lectureElem.setAttribute ("title", lecture.getTitle ());
     //Add the child to the tree
-    this->m_lecturesNode.appendChild (lectureElem);
+    this->m_lecturesNode->appendChild (lectureElem);
     //Update the child node list
-    this->m_lectures=this->m_lecturesNode.childNodes ();
+    this->m_lectures=this->m_lecturesNode->childNodes ();
     return true;
 }
 
@@ -39,9 +41,9 @@ bool LectureController::remove(int id) {
         }
     }
     //Remove the node
-    if(!this->m_lecturesNode.removeChild (rmNode).isNull ()) {
+    if(!this->m_lecturesNode->removeChild (rmNode).isNull ()) {
         //Update the node list
-        this->m_lectures=this->m_lecturesNode.childNodes ();
+        this->m_lectures=this->m_lecturesNode->childNodes ();
         return true;
     }
     return false;

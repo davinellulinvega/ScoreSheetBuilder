@@ -1,7 +1,7 @@
 #include "studentcontroller.h"
 
 //Constructor
-StudentController::StudentController(QDomNode &studentsNode):m_studentsNode(studentsNode),m_students(m_studentsNode.childNodes ())
+StudentController::StudentController(QDomNode *studentsNode):m_studentsNode(studentsNode),m_students(m_studentsNode->childNodes ())
 {
 }
 
@@ -10,7 +10,7 @@ QDomNodeList StudentController::getStudents() {
     return this->m_students;
 }
 
-QDomNode StudentController::getStudentsNode () {
+QDomNode *StudentController::getStudentsNode () {
     return this->m_studentsNode;
 }
 
@@ -23,10 +23,10 @@ bool StudentController::add(Student student, QDomElement studentElem) {
     studentElem.setAttribute ("globalComment",student.getGlobalComment ());
 
     //Append the child to the node
-    this->m_studentsNode.appendChild (studentElem);
+    this->m_studentsNode->appendChild (studentElem);
 
     //Update the node liste
-    this->m_students=this->m_studentsNode.childNodes ();
+    this->m_students=this->m_studentsNode->childNodes ();
     return true;
 }
 
@@ -65,9 +65,9 @@ bool StudentController::remove(int id) {
     }
 
     //Remove the node from the tree
-    if(!this->m_studentsNode.removeChild (rmNode).isNull ()) {
+    if(!this->m_studentsNode->removeChild (rmNode).isNull ()) {
         //Update the node list
-        this->m_students=this->m_studentsNode.childNodes ();
+        this->m_students=this->m_studentsNode->childNodes ();
         return true;
     }
     else {

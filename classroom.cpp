@@ -5,6 +5,10 @@ ClassRoom::ClassRoom(int id, QString title):m_id(id),m_title(title)
 {
 }
 
+ClassRoom::ClassRoom(ClassRoom *classroom):m_id(classroom->getId ()),m_title(classroom->getTitle ()),m_students(classroom->getStudents ())
+{
+}
+
 //Getter & Setter
 //Id
 int ClassRoom::getId() {
@@ -27,9 +31,9 @@ void ClassRoom::setTitle (QString title) {
 }
 
 //Students
-QList<Student> ClassRoom::getStudents() {
+QList<Student> *ClassRoom::getStudents() {
     //Retrun the QList containing the Students
-    return *m_students;
+    return m_students;
 }
 
 void ClassRoom::setStudents(QList<Student> *students) {

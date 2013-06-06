@@ -9,6 +9,7 @@ public:
     //Constructor
     Score(int id, char mark);
     Score(int id, QString mark);
+    Score(Score *score);
 
     //Getter & Setter
     //Id

@@ -11,6 +11,7 @@ class ClassRoom
 public:
     //Constructor
     ClassRoom(int id, QString title);
+    ClassRoom(ClassRoom *classroom);
 
     //Getter & Setter
     //Id
@@ -21,7 +22,7 @@ public:
     void setTitle(QString title);
 
     //Students
-    QList<Student> getStudents();
+    QList<Student> *getStudents();
     void setStudents(QList<Student> *students);
 
 private:

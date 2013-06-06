@@ -7,6 +7,10 @@ Student::Student(int id, QString fName, QString name, QString globalCom):m_id(id
 {
 }
 
+Student::Student(Student *student):m_id(student->getId ()),m_firstName(student->getFirstName ()),m_name(student->getName ()),m_globalComment(student->getGlobalComment ())
+{
+}
+
 //Getter & Setter
 //Id
 int Student::getId() {

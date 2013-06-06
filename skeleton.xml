@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
 	<classes>
-		<class id="0">
+		<class id="0" title="CP">
 			<students>
 				<student id="0" fName="fName1" name="name1" globalComment="com1" />
 				<student id="1" fName="fName2" name="name2" globalComment="com2" />
@@ -21,7 +21,7 @@
 				</period>
 			</periods>
 		</class>
-		<class id="1">
+		<class id="1" title="CE1">
 		</class>
 	</classes>
 	<scores>

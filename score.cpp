@@ -21,6 +21,10 @@ Score::Score(int id, QString mark):m_id(id)
     }
 }
 
+Score::Score(Score *score):m_id(score->getId ()),m_mark(score->getMark ())
+{
+}
+
 //Getter & Setter
 //Id
 int Score::getId() {

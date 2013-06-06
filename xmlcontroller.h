@@ -40,8 +40,7 @@ public:
 
 protected:
     QDomDocument *document;
-    QDomElement domElement;
-    QDomNode root;
+    QDomElement root;
 };
 
 #endif // XMLCONTROLLER_H
