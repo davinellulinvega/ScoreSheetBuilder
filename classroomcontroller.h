@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "classroom.h"
-#include <vector>
+#include <QList>
 
 class ClassRoomController
 {
@@ -16,7 +16,7 @@ public:
     bool update(ClassRoom classRoom);
     bool remove(int id);
     ClassRoom query(int id);
-    vector<ClassRoom> queryAll();
+    QList<ClassRoom> queryAll();
     bool isValidId(int id);
 
 private:

@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "lecture.h"
-#include <vector>
+#include <QList>
 
 class LectureController
 {
@@ -16,7 +16,7 @@ public:
     bool update(Lecture lecture);
     bool remove(int id);
     Lecture query(int id);
-    vector<Lecture> queryAll();
+    QList<Lecture> queryAll();
 
     //Static methods
 

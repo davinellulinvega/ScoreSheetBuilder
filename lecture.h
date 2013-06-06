@@ -2,28 +2,25 @@
 #define LECTURE_H
 
 //Package
-#include <iostream>
-
-//Namespace
-using namespace std;
+#include <QString>
 
 class Lecture
 {
 public:
     //Constructor
-    Lecture(int id, string title);
+    Lecture(int id, QString title);
 
     //Getter & Setter
     //Id
     int getId();
 
     //Title
-    string getTitle();
-    void setTitle(string title);
+    QString getTitle();
+    void setTitle(QString title);
 
 private:
     int m_id;
-    string m_title;
+    QString m_title;
 };
 
 #endif // LECTURE_H

@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "score.h"
-#include <vector>
+#include <QList>
 
 class ScoreController
 {
@@ -13,7 +13,7 @@ public:
 
     //Methods
     Score query(int id);
-    vector<Score> queryAll();
+    QList<Score> queryAll();
 
     //Static methods
 

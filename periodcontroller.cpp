@@ -49,13 +49,13 @@ Period PeriodController::query(int id) {
     return NULL;
 }
 
-vector<Period> PeriodController::queryAll() {
-    //Create an empty vector
-    vector<Period> periods;
-    //Fill in the vector
+QList<Period> PeriodController::queryAll() {
+    //Create an empty QList
+    QList<Period> periods;
+    //Fill in the QList
     for(int i=0; i<this->m_periods.length (); i++) {
         periods.push_back (new Period(this->m_periods.item (i).toElement ().attribute ("id",0).toInt ()));
     }
-    //Return the vector
+    //Return the QList
     return periods;
 }

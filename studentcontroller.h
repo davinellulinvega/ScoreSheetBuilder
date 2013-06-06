@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "student.h"
-#include <vector>
+#include <QList>
 
 class StudentController
 {
@@ -18,10 +18,10 @@ public:
     //Methods
     bool add(Student student, QDomElement studentElem);
     bool update(Student student);
-    bool remove(id);
-    Student query(id);
-    vector<Student> queryAll();
-    bool isValidId(id);
+    bool remove(int id);
+    Student query(int id);
+    QList<Student> queryAll();
+    bool isValidId(int id);
 
 private:
     QDomNodeList m_students;

@@ -57,13 +57,13 @@ Lecture LectureController::query(int id) {
     return NULL;
 }
 
-vector<Lecture> LectureController::queryAll() {
-    //Create an empty vector
-    vector<Lecture> lectures;
-    //Fill in the vector
+QList<Lecture> LectureController::queryAll() {
+    //Create an empty QList
+    QList<Lecture> lectures;
+    //Fill in the QList
     for(int i=0; i<this->m_lectures.length (); i++) {
         lectures.push_back (Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title")));
     }
-    //Return the vector
+    //Return the QList
     return lectures;
 }

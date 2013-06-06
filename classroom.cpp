@@ -1,9 +1,7 @@
 #include "classroom.h"
 
-using namespace std;
-
 //Constructor
-ClassRoom::ClassRoom(int id, string title):m_id(id),m_title(title)
+ClassRoom::ClassRoom(int id, QString title):m_id(id),m_title(title)
 {
 }
 
@@ -15,26 +13,26 @@ int ClassRoom::getId() {
 }
 
 //Title
-string ClassRoom::getTitle() {
+QString ClassRoom::getTitle() {
     //Return the title
     return this->m_title;
 }
 
-void ClassRoom::setTitle (string title) {
+void ClassRoom::setTitle (QString title) {
     //Check if the title is valid
-    if(!title.empty ()) {
+    if(!title.isEmpty ()) {
         //Set the title
         this->m_title=title;
     }
 }
 
 //Students
-vector<Student> ClassRoom::getStudents() {
-    //Retrun the vector containing the Students
+QList<Student> ClassRoom::getStudents() {
+    //Retrun the QList containing the Students
     return *m_students;
 }
 
-void ClassRoom::setStudents(vector<Student> *students) {
+void ClassRoom::setStudents(QList<Student> *students) {
     //Assign the new students vetor
     this->m_students=students;
 }

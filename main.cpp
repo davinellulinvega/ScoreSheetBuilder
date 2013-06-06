@@ -1,6 +1,6 @@
 ﻿#include <QtGui>
 #include <QApplication>
-//#include <iostream>
+#include <iostream>
 
 //Controllers
 #include "xmlcontroller.h"
@@ -8,6 +8,8 @@
 
 //Models
 #include "parameters.h"
+
+using namespace std;
 
 int main(int argc, char *argv[]) {
  //   QApplication a(argc, argv);
@@ -20,5 +22,7 @@ int main(int argc, char *argv[]) {
     ParametersController paramsControl(xmlDoc.getParametersNode ());
     Parameters params(paramsControl.query ());
   //  return a.exec();
+
+    cout << "Classroom: " << params.getClassroom () << ", Period: " << params.getPeriod () << endl;
     return 0;
 }

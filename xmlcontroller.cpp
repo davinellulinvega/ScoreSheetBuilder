@@ -187,6 +187,6 @@ bool Xmlcontroller::save () {
     return true;
 }
 
-QDomElement Xmlcontroller::createElement (string elemName) {
+QDomElement Xmlcontroller::createElement (QString elemName) {
     return this->document->createElement (elemName);
 }

@@ -59,13 +59,13 @@ Result ResultController::query(int id) {
     return NULL;
 }
 
-vector<Result> ResultController::queryAll() {
-    //Create an empty vector
-    vector<Result> results;
-    //Fill in the vector
+QList<Result> ResultController::queryAll() {
+    //Create an empty QList
+    QList<Result> results;
+    //Fill in the QList
     for(int i=0; i<this->m_results.length (); i++) {
         results.push_back(new Result(m_results.item (i).toElement ().attribute ("id",0).toInt (), m_results.item (i).toElement ().attribute ("student",0).toInt (), m_results.item (i).toElement ().attribute ("lecture",0).toInt (), m_results.item (i).toElement ().attribute ("mark",0).toInt ()));
     }
-    //Return the vector
+    //Return the QList
     return results;
 }

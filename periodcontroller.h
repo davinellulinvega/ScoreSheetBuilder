@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "period.h"
-#include <vector>
+#include <QList>
 
 class PeriodController
 {
@@ -15,7 +15,7 @@ public:
     bool add(Period period, QDomElement periodElem);
     bool remove(int id);
     Period query(int id);
-    vector<Period> queryAll();
+    QList<Period> queryAll();
 
     //Static methods
     static bool isValidId(int id);

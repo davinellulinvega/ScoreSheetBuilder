@@ -3,7 +3,7 @@
 using namespace std;
 
 //Constructor
-Student::Student(int id, string fName, string name, string globalCom):m_id(id),m_firstName(fName),m_name(name),m_globalComment(globalCom)
+Student::Student(int id, QString fName, QString name, QString globalCom):m_id(id),m_firstName(fName),m_name(name),m_globalComment(globalCom)
 {
 }
 
@@ -19,40 +19,40 @@ void Student::setId (int id) {
 }
 
 //First Name
-string Student::getFirstName() {
+QString Student::getFirstName() {
     //Return first name
     return this->m_firstName;
 }
 
-void Student::setFirstName(string firstName) {
+void Student::setFirstName(QString firstName) {
     //If firstName is not empty
-    if(!firstName.empty()) {
+    if(!firstName.isEmpty ()) {
         this->m_firstName=firstName;
     }
 }
 
 //Name
-string Student::getName() {
+QString Student::getName() {
     //Return the name
     return this->m_name;
 }
 
-void Student::setName(string name) {
+void Student::setName(QString name) {
     //If the name is not empty
-    if(!name.empty()) {
+    if(!name.isEmpty ()) {
         this->m_name=name;
     }
 }
 
 //GlobalComment
-string Student::getGlobalComment() {
+QString Student::getGlobalComment() {
     //Return global comment
     return this->m_globalComment;
 }
 
-void Student::setGlobalComment(string str) {
+void Student::setGlobalComment(QString str) {
     //If the comment is not empty
-    if(!str.empty()) {
+    if(!str.isEmpty ()) {
         //Set the global comment
         this->m_globalComment=str;
     }

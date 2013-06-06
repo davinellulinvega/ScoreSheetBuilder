@@ -1,7 +1,7 @@
 #include "lecture.h"
 
 //Constructor
-Lecture::Lecture(int id, string title):m_id(id),m_title(title)
+Lecture::Lecture(int id, QString title):m_id(id),m_title(title)
 {
 }
 
@@ -13,14 +13,14 @@ int Lecture::getId() {
 }
 
 //Title
-string Lecture::getTitle() {
+QString Lecture::getTitle() {
     //Return the title
     return this->m_title;
 }
 
-void Lecture::setTitle(string title) {
+void Lecture::setTitle(QString title) {
     //Check if the new title is valid
-    if(!title.empty()) {
+    if(!title.isEmpty ()) {
         this->m_title=title;
     }
 }

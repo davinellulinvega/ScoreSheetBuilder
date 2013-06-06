@@ -2,32 +2,32 @@
 #define CLASSROOM_H
 
 //Packages
-#include <iostream>
-#include <vector>
+#include <QString>
+#include <QList>
 #include "student.h"
 
 class ClassRoom
 {
 public:
     //Constructor
-    ClassRoom(int id, string title);
+    ClassRoom(int id, QString title);
 
     //Getter & Setter
     //Id
     int getId();
 
     //Title
-    string getTitle();
-    void setTitle(string title);
+    QString getTitle();
+    void setTitle(QString title);
 
     //Students
-    vector<Student> getStudents();
-    void setStudents(vector<Student> *students);
+    QList<Student> getStudents();
+    void setStudents(QList<Student> *students);
 
 private:
     int m_id;
-    string m_title;
-    vector<Student> *m_students;
+    QString m_title;
+    QList<Student> *m_students;
 };
 
 #endif // CLASSROOM_H

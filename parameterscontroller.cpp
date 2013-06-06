@@ -22,5 +22,5 @@ Parameters ParametersController::query() {
     //Get the parameter element
     QDomElement parameters(this->m_parametersNode.firstChildElement ("parameter"));
     //Return the parameters
-    return new Parameters((bool)(parameters.attributeNode ("modifs")),(int)(parameters.attributeNode ("classroom")), (int)(parameters.attributeNode ("period")));
+    return new Parameters((bool)(parameters.attributeNode ("modifs")),parameters.attribute ("classroom",0).toInt (), parameters.attribute ("period",0).toInt ());
 }

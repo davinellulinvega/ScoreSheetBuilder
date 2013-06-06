@@ -44,7 +44,7 @@ bool ClassRoomController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    if(this->m_classroomsNode.removeChild (rmNode)) {
+    if(!this->m_classroomsNode.removeChild (rmNode).isNull ()) {
         //Update the node list
         this->m_classrooms=this->m_classroomsNode.childNodes ();
         return true;
@@ -63,14 +63,14 @@ ClassRoom ClassRoomController::query(int id) {
     return NULL;
 }
 
-vector<ClassRoom> ClassRoomController::queryAll() {
-    //Create a new vector
-    vector<ClassRoom> classrooms;
-    //Fill in the vector
+QList<ClassRoom> ClassRoomController::queryAll() {
+    //Create a new QList
+    QList<ClassRoom> classrooms;
+    //Fill in the QList
     for(int i=0; i<this->m_classrooms.length (); i++) {
         classrooms.push_back (new ClassRoom(this->m_classrooms.item (i).toElement ().attribute ("id",0).toInt (), this->m_classrooms.item (i).toElement ().attribute ("title")));
     }
-    //Return the vector
+    //Return the QList
     return classrooms;
 }
 

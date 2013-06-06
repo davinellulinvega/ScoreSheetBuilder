@@ -86,19 +86,19 @@ Student StudentController::query(int id) {
     return NULL;
 }
 
-vector<Student> StudentController::queryAll() {
-    //Create a new vector
-    vector<Student> students;
+QList<Student> StudentController::queryAll() {
+    //Create a new QList
+    QList<Student> students;
 
-    //Fill in the vector
+    //Fill in the QList
     for(int i=0; i<this->m_students.length (); i++) {
         //Get the studentXml
         QDomElement tmpStudentXml(this->m_students.item (i).toElement ());
 
-        //Append at the end of the vector
+        //Append at the end of the QList
         students.push_back (new Student(tmpStudentXml.attributeNode ("id"),tmpStudentXml.attributeNode ("fName"),tmpStudentXml.attributeNode ("name"),tmpStudentXml.attributeNode ("globalComment")));
     }
-    //Return the vector
+    //Return the QList
     return students;
 }
 

@@ -3,7 +3,7 @@
 
 #include <QtXml>
 #include "result.h"
-#include <vector>
+#include <QList>
 
 class ResultController
 {
@@ -16,7 +16,7 @@ public:
     bool update(Result result);
     bool remove(int id);
     Result query(int id);
-    vector<Result> queryAll();
+    QList<Result> queryAll();
 
 private:
     QDomNodeList m_results;

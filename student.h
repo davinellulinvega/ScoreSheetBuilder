@@ -2,16 +2,13 @@
 #define STUDENT_H
 
 //Packages
-#include <iostream>
-#include <string>
-
-using namespace std;
+#include <QString>
 
 class Student
 {
 public:
     //Constructor
-    Student(int id, string fName, string name, string globalCom);
+    Student(int id, QString fName, QString name, QString globalCom);
 
     //Getter & Setter
     //Id
@@ -19,22 +16,22 @@ public:
     void setId(int id);
 
     //First Name
-    string getFirstName();
-    void setFirstName(string firstName);
+    QString getFirstName();
+    void setFirstName(QString firstName);
 
     //Name
-    string getName();
-    void setName(string name);
+    QString getName();
+    void setName(QString name);
 
     //GlobalComment
-    string getGlobalComment();
-    void setGlobalComment(string str);
+    QString getGlobalComment();
+    void setGlobalComment(QString str);
 
 private:
     int m_id;
-    string m_firstName;
-    string m_name;
-    string m_globalComment;
+    QString m_firstName;
+    QString m_name;
+    QString m_globalComment;
 
 };
 
