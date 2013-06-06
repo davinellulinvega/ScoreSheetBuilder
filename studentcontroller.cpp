@@ -80,7 +80,7 @@ Student *StudentController::query(int id) {
     for(int i=0; i<this->m_students.length (); i++) {
         if(this->m_students.item (i).toElement ().attribute ("id",0).toInt ()==id) {
             QDomElement studentXml=this->m_students.item (i).toElement ();
-            return new Student(studentXml.attributeNode ("id"),studentXml.attributeNode ("fName"),studentXml.attributeNode ("name"),studentXml.attributeNode ("globalComment"));
+            return new Student(studentXml.attribute ("id",0).toInt (),studentXml.attribute ("fName"),studentXml.attribute ("name"),studentXml.attribute ("globalComment"));
         }
     }
     return NULL;
@@ -96,7 +96,7 @@ QList<Student *> StudentController::queryAll() {
         QDomElement tmpStudentXml(this->m_students.item (i).toElement ());
 
         //Append at the end of the QList
-        students.push_back (new Student(tmpStudentXml.attributeNode ("id"),tmpStudentXml.attributeNode ("fName"),tmpStudentXml.attributeNode ("name"),tmpStudentXml.attributeNode ("globalComment")));
+        students.push_back (new Student(tmpStudentXml.attribute ("id",0).toInt (),tmpStudentXml.attribute ("fName"),tmpStudentXml.attribute ("name"),tmpStudentXml.attribute ("globalComment")));
     }
     //Return the QList
     return students;

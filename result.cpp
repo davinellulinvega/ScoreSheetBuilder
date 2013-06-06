@@ -7,33 +7,33 @@ Result::Result(int id, int stdId, int lectId, int markId):m_id(id),m_studentId(s
 
 //Getter and Setter
 //Id
-Result::getId () {
+int Result::getId () {
     return this->m_id;
 }
 
 //Student Id
-Result::getStudentId () {
+int Result::getStudentId () {
     return this->m_studentId;
 }
 
-Result::setStudentId (int id) {
+void Result::setStudentId (int id) {
     this->m_studentId=id;
 }
 
 //Lecture Id
-Result::getLectureId () {
+int Result::getLectureId () {
     return this->m_lectureId;
 }
 
-Result::setLectureId (int id) {
+void Result::setLectureId (int id) {
     this->m_lectureId=id;
 }
 
 //Mark Id
-Result::getMarkId () {
+int Result::getMarkId () {
     return this->m_markId;
 }
 
-Result::setMarkId (int id) {
+void Result::setMarkId (int id) {
     this->m_markId=id;
 }

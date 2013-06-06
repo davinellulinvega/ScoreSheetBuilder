@@ -1,7 +1,7 @@
 #include "parameterscontroller.h"
 
 //Constructor
-ParametersController::ParametersController(QDomNode parametersNode):m_parametersNode(parametersNode),m_parameters(m_parametersNode.childNodes ())
+ParametersController::ParametersController(QDomNode *parametersNode):m_parametersNode(parametersNode),m_parameters(m_parametersNode->childNodes ())
 {
     this->query ();
 }
@@ -9,7 +9,7 @@ ParametersController::ParametersController(QDomNode parametersNode):m_parameters
 //Methods
 bool ParametersController::update(Parameters parameters) {
     //Get the parameter element
-    QDomElement parameter(this->m_parametersNode.firstChildElement ("parameter"));
+    QDomElement parameter(this->m_parametersNode->firstChildElement ("parameter"));
 
     //Set the attributes
     parameter.setAttribute ("modifs","true");
@@ -20,7 +20,12 @@ bool ParametersController::update(Parameters parameters) {
 
 Parameters *ParametersController::query() {
     //Get the parameter element
-    QDomElement parameters(this->m_parametersNode.firstChildElement ("parameter"));
+    QDomElement parameters(this->m_parametersNode->firstChildElement ("parameter"));
     //Return the parameters
-    return new Parameters((bool)(parameters.attributeNode ("modifs")),parameters.attribute ("classroom",0).toInt (), parameters.attribute ("period",0).toInt ());
+    if(parameters.attribute ("modifs")=="true") {
+        return new Parameters(true,parameters.attribute ("classroom",0).toInt (), parameters.attribute ("period",0).toInt ());
+    }
+    else{
+        return new Parameters(false,parameters.attribute ("classroom",0).toInt (), parameters.attribute ("period",0).toInt ());
+    }
 }

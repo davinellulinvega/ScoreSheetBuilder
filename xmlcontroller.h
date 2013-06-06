@@ -4,9 +4,6 @@
 #include <QWidget>
 #include <QtGui>
 #include <QtXml>
-#include <iostream>
-
-using namespace std;
 
 class Xmlcontroller : public QWidget
 {
@@ -17,29 +14,29 @@ public:
 
     //Getter
     //Classroom
-    QDomNode getClassroomsNode ();
+    QDomNode *getClassroomsNode();
 
     //Lecture
-    QDomNode getLecturesNode (int classId, int periodId);
+    QDomNode *getLecturesNode (int classId, int periodId);
 
     //Period
-    QDomNode getPeriodsNode (int classId);
+    QDomNode *getPeriodsNode (int classId);
 
     //Score
-    QDomNode getScoresNode ();
+    QDomNode *getScoresNode ();
 
     //Student
-    QDomNode getStudentsNode (int classId);
+    QDomNode *getStudentsNode (int classId);
 
     //Result
-    QDomNode getResultsNode (int classId, int periodId);
+    QDomNode *getResultsNode (int classId, int periodId);
 
     //Parameters
-    QDomNode getParametersNode ();
+    QDomNode *getParametersNode ();
 
     //Methods
     bool save();
-    QDomElement createElement(string elemName);
+    QDomElement createElement(QString elemName);
 
 protected:
     QDomDocument *document;

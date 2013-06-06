@@ -1,11 +1,14 @@
 #ifndef SCORE_H
 #define SCORE_H
 
+#include <QString>
+
 class Score
 {
 public:
     //Constructor
     Score(int id, char mark);
+    Score(int id, QString mark);
 
     //Getter & Setter
     //Id

@@ -6,6 +6,7 @@ class Parameters
 public:
     //Constructor
     Parameters(bool modifs, int classId, int periodId);
+    Parameters(Parameters *params);
 
     //Getter & Setter
     //Modifs

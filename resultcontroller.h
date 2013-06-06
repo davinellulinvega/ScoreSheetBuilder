@@ -9,7 +9,7 @@ class ResultController
 {
 public:
     //Constructor
-    ResultController(QDomNode &reslutsNode);
+    ResultController(QDomNode *reslutsNode);
 
     //Methods
     bool add(Result result, QDomElement resultElem);
@@ -20,7 +20,7 @@ public:
 
 private:
     QDomNodeList m_results;
-    QDomNode m_resultsNode;
+    QDomNode *m_resultsNode;
 
 };
 

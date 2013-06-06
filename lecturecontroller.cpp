@@ -62,7 +62,7 @@ QList<Lecture *> LectureController::queryAll() {
     QList<Lecture *> lectures;
     //Fill in the QList
     for(int i=0; i<this->m_lectures.length (); i++) {
-        lectures.push_back (Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title")));
+        lectures.push_back (new Lecture(this->m_lectures.item (i).toElement ().attribute ("id",0).toInt (),this->m_lectures.item (i).toElement ().attribute ("title")));
     }
     //Return the QList
     return lectures;

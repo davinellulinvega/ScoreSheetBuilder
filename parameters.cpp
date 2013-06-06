@@ -6,6 +6,11 @@ Parameters::Parameters(bool modifs, int classId, int periodId):m_modifs(modifs),
 {
 }
 
+Parameters::Parameters(Parameters *params):m_modifs(params->isModified ()),m_classRoom(params->getClassroom ()),m_period(params->getPeriod ())
+{
+
+}
+
 //Getter & Setter
 //Modifs
 bool Parameters::isModified() {
@@ -35,8 +40,5 @@ int Parameters::getPeriod() {
 }
 
 void Parameters::setPeriod(int id) {
-    //If the period id is valid
-    if(PeriodController::isValidId(id)) {
-        this->m_period=id;
-    }
+    this->m_period=id;
 }

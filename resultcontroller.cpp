@@ -1,6 +1,6 @@
 #include "resultcontroller.h"
 
-ResultController::ResultController(QDomNode &reslutsNode):m_resultsNode(resultsNode),m_results(m_resultsNode.childNodes ())
+ResultController::ResultController(QDomNode *reslutsNode):m_resultsNode(reslutsNode),m_results(m_resultsNode->childNodes ())
 {
 }
 
@@ -12,9 +12,9 @@ bool ResultController::add(Result result, QDomElement resultElem) {
     resultElem.setAttribute ("lecture",result.getLectureId ());
     resultElem.setAttribute ("mark",result.getMarkId ());
     //Add the element to the tree
-    this->m_resultsNode.appendChild (resultElem);
+    this->m_resultsNode->appendChild (resultElem);
     //Update the node list
-    this->m_results=this->m_resultsNode.childNodes ();
+    this->m_results=this->m_resultsNode->childNodes ();
     return true;
 }
 
@@ -41,9 +41,9 @@ bool ResultController::remove(int id) {
         }
     }
     //Remove the node from the tree
-    if(!this->m_resultsNode.removeChild (rmNode).isNull ()) {
+    if(!this->m_resultsNode->removeChild (rmNode).isNull ()) {
         //Update the node list
-        this->m_results=this->m_resultsNode.childNodes ();
+        this->m_results=this->m_resultsNode->childNodes ();
         return true;
     }
     return false;
