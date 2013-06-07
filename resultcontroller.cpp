@@ -1,7 +1,9 @@
 #include "resultcontroller.h"
 
-ResultController::ResultController(QDomNode *reslutsNode):m_resultsNode(reslutsNode),m_results(m_resultsNode->childNodes ())
+ResultController::ResultController(QDomNode *resultsNode)
 {
+    m_resultsNode=resultsNode;
+    m_results=m_resultsNode->childNodes ();
 }
 
 //Methods

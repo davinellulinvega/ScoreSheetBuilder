@@ -1,8 +1,10 @@
 #include "studentcontroller.h"
 
 //Constructor
-StudentController::StudentController(QDomNode *studentsNode):m_studentsNode(studentsNode),m_students(m_studentsNode->childNodes ())
+StudentController::StudentController(QDomNode *studentsNode)
 {
+    m_studentsNode=studentsNode;
+    m_students=m_studentsNode->childNodes ();
 }
 
 //Getters

@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
     //Get the results
     ResultController resultControl(xmlDoc.getResultsNode (classroom.getId (),period.getId ()));
     Result result(resultControl.query (0));
-
+    cout << "Everything's done" << endl;
 //    return a.exec();
     return 0;
 }
